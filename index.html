@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRIGDA — Websites, Lead Generation & AI Automation | Gujranwala, Pakistan</title>
+<meta name="description" content="TRIGDA builds modern business websites, AI chatbot agents, targeted lead generation, and automation systems for growing businesses. Based in Gujranwala, Pakistan.">
+<meta name="keywords" content="web development Pakistan, AI chatbot agent, lead generation agency Pakistan, AI automation Gujranwala, business automation Pakistan, TRIGDA">
+<link rel="canonical" href="https://trigda.online/">
+<meta property="og:title" content="TRIGDA — Websites, Lead Generation & AI Automation | Gujranwala, Pakistan">
+<meta property="og:description" content="TRIGDA builds modern business websites, AI chatbot agents, targeted lead generation, and automation systems for growing businesses. Based in Gujranwala, Pakistan.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+.hero {
+  min-height:100vh; display:flex; align-items:center;
+  padding:calc(var(--nav-h) + 60px) 5% 80px;
+  position:relative; overflow:hidden;
+  background:radial-gradient(ellipse 90% 60% at 50% -5%, rgba(0,130,255,0.22), transparent);
+}
+.hero-content { max-width:700px; z-index:1; position:relative; }
+.hero-tag {
+  display:inline-flex; align-items:center; gap:.5rem;
+  background:rgba(0,170,255,0.1); border:1px solid rgba(0,170,255,0.25);
+  color:var(--accent-cyan); font-size:.78rem; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase;
+  padding:.4rem 1.1rem; border-radius:var(--r-xl); margin-bottom:1.5rem;
+  animation:pulse-ring 2.5s infinite;
+}
+.hero-tag .dot { width:6px; height:6px; background:#00e5ff; border-radius:50%; }
+.hero-title { font-size:clamp(2.5rem,6vw,4.5rem); font-weight:800; letter-spacing:-1.5px; margin-bottom:1.5rem; line-height:1.08; }
+.hero-title .grad {
+  background:linear-gradient(135deg,#00aaff,#00e5ff,#00aaff);
+  background-size:200% auto;
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  animation:gradientShift 3s ease infinite;
+}
+.hero-sub { font-size:1.1rem; color:var(--text-secondary); max-width:540px; line-height:1.75; margin-bottom:2.5rem; }
+.hero-btns { display:flex; flex-wrap:wrap; gap:1rem; align-items:center; }
+.hero-visual { position:absolute; right:3%; top:50%; transform:translateY(-50%); width:min(46%, 520px); z-index:0; }
+.hero-mockup {
+  background:var(--bg-card); border:1px solid var(--border);
+  border-radius:var(--r-lg); padding:1.5rem;
+  box-shadow:0 20px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(0,170,255,0.08);
+  animation:float 5s ease-in-out infinite;
+}
+.mockup-bar { display:flex; align-items:center; gap:.6rem; margin-bottom:1.2rem; }
+.mockup-dot { width:10px; height:10px; border-radius:50%; }
+.mockup-dot:nth-child(1){background:#ff5f57} .mockup-dot:nth-child(2){background:#febc2e} .mockup-dot:nth-child(3){background:#28c840}
+.mockup-row { background:var(--bg-secondary); border-radius:var(--r-sm); padding:.75rem 1rem; margin-bottom:.7rem; display:flex; align-items:center; gap:.8rem; }
+.mockup-icon { width:32px; height:32px; border-radius:8px; background:var(--btn-grad); display:flex; align-items:center; justify-content:center; font-size:.85rem; flex-shrink:0; }
+.mockup-line { height:8px; background:var(--bg-card); border-radius:4px; flex:1; }
+.mockup-line.short { max-width:60%; }
+.mockup-line.accent { background:linear-gradient(90deg,#007bff,#00e5ff); max-width:75%; }
+.mockup-stat { font-size:1.4rem; font-weight:800; color:var(--accent-cyan); }
+.mockup-sublabel { font-size:.72rem; color:var(--text-muted); }
+.mockup-stats { display:flex; gap:1rem; margin-top:.8rem; }
+.mockup-stat-box { flex:1; background:var(--bg-secondary); border-radius:var(--r-sm); padding:.7rem; text-align:center; }
+
+/* Feature Cards Clickable */
+.feature-card { cursor:pointer; display:block; color:inherit; }
+.feature-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:.6rem; }
+.feature-card p { color:var(--text-secondary); font-size:.9rem; line-height:1.7; }
+.feature-card .learn-more { color:var(--accent); font-size:.82rem; font-weight:600; display:inline-flex; align-items:center; gap:.3rem; margin-top:1rem; transition:.2s; }
+.feature-card:hover .learn-more { gap:.6rem; }
+
+/* Steps */
+.steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+.step-card { text-align:center; position:relative; }
+.step-card::after { content:'→'; position:absolute; top:2rem; right:-1rem; color:var(--accent); opacity:.3; font-size:1.5rem; font-weight:700; }
+.step-card:last-child::after { display:none; }
+.step-num-circle { width:64px; height:64px; border-radius:50%; margin:0 auto 1.2rem; background:var(--accent-dim); border:2px solid var(--border-hover); display:flex; align-items:center; justify-content:center; font-family:'Sora',sans-serif; font-size:1.1rem; font-weight:800; color:var(--accent-cyan); }
+.step-card h3 { font-size:1.1rem; font-weight:700; margin-bottom:.6rem; }
+.step-card p { color:var(--text-secondary); font-size:.88rem; }
+
+/* AI Chat Demo */
+.proof-section { background:var(--bg-secondary); }
+.proof-inner { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+.proof-stats { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+.proof-chat { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--r-lg); padding:1.5rem; position:relative; }
+.chat-msg { display:flex; gap:.8rem; margin-bottom:1rem; }
+.chat-avatar { width:32px; height:32px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:.7rem; font-weight:700; color:#fff; }
+.chat-avatar.ai { background:var(--btn-grad); }
+.chat-avatar.user { background:var(--bg-secondary); color:var(--text-secondary); border:1px solid var(--border); }
+.chat-bubble { background:var(--bg-secondary); border-radius:0 var(--r-md) var(--r-md) var(--r-md); padding:.7rem 1rem; font-size:.82rem; color:var(--text-secondary); line-height:1.5; max-width:80%; }
+.chat-bubble.ai-bubble { background:var(--accent-dim); color:var(--text-primary); }
+.chat-bar { display:flex; gap:.7rem; margin-top:1rem; }
+.chat-input-field { flex:1; background:var(--bg-secondary); border:1px solid var(--border); border-radius:var(--r-xl); padding:.6rem 1rem; font-size:.82rem; color:var(--text-primary); font-family:inherit; outline:none; transition:border-color .2s; }
+.chat-input-field:focus { border-color:var(--accent); }
+.chat-messages { max-height:300px; overflow-y:auto; }
+.typing-indicator { display:none; align-items:center; gap:4px; padding:.5rem .75rem; }
+.typing-indicator.show { display:flex; }
+.typing-indicator span { width:6px; height:6px; background:var(--accent); border-radius:50%; animation:bounce 1.2s infinite; }
+.typing-indicator span:nth-child(2){animation-delay:.2s} .typing-indicator span:nth-child(3){animation-delay:.4s}
+@keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-8px)} }
+
+/* Features Grid */
+.features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+.feat-card { display:flex; gap:1rem; align-items:flex-start; }
+.feat-icon { width:44px; height:44px; border-radius:var(--r-sm); background:var(--accent-dim); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0; }
+.feat-card h4 { font-size:.95rem; font-weight:700; margin-bottom:.3rem; }
+.feat-card p { color:var(--text-secondary); font-size:.82rem; line-height:1.6; }
+
+/* Testimonials */
+.testimonials-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+
+/* Pricing - Lead Gen Only */
+.pricing-single { max-width:520px; margin:3rem auto 0; padding-top:1.5rem; } .pricing-single .pricing-card { position:relative; overflow:visible !important; margin-top:1rem; z-index:1; } .pricing-single .pricing-card a, .pricing-single .pricing-card button { position:relative; z-index:10; pointer-events:auto !important; } .pricing-single .pricing-card .glow-orb { z-index:0; pointer-events:none; }
+
+/* Final CTA */
+.final-cta { background:var(--bg-secondary); border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.cta-box { border:1.5px solid var(--border-hover); border-radius:var(--r-xl); padding:4rem; text-align:center; position:relative; overflow:hidden; background:radial-gradient(ellipse 70% 80% at 50% 50%, rgba(0,130,255,0.07), transparent); }
+.cta-btns { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; margin-top:2rem; }
+
+@media(max-width:1024px){
+  .hero-visual{display:none;}
+  .proof-inner{grid-template-columns:1fr;}
+  .features-grid{grid-template-columns:repeat(2,1fr);}
+  .testimonials-grid{grid-template-columns:1fr 1fr;}
+  .steps-grid{grid-template-columns:1fr; max-width:500px; margin:0 auto;}
+  .step-card::after{display:none;}
+}
+@media(max-width:768px){
+  .hero{min-height:auto; padding-top:calc(var(--nav-h) + 40px);}
+  .proof-stats{grid-template-columns:1fr 1fr;}
+  .features-grid{grid-template-columns:1fr;}
+  .testimonials-grid{grid-template-columns:1fr;}
+  .cta-box{padding:2.5rem 1.5rem;}
+}
+@media(max-width:400px){
+  .proof-stats{grid-template-columns:1fr; max-width:280px; margin-left:auto; margin-right:auto;}
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">TRIGDA</a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="ai-agent.html">AI Agent</a>
+    <a href="lead-generation.html">Lead Generation</a>
+    <a href="ai-automation.html">AI Automation</a>
+    <a href="web-development.html">Web Development</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-cta"><a href="free-demo.html" class="btn-primary btn-sm">Book Appointment</a></div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="ai-agent.html">AI Agent</a>
+  <a href="lead-generation.html">Lead Generation</a><a href="ai-automation.html">AI Automation</a>
+  <a href="web-development.html">Web Development</a><a href="contact.html">Contact</a>
+  <a href="free-demo.html" class="btn-primary" style="text-align:center;margin-top:.5rem;">Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="glow-orb glow-blue" style="width:600px;height:600px;top:-200px;left:-100px;"></div>
+  <div class="glow-orb glow-cyan" style="width:400px;height:400px;bottom:-100px;right:200px;"></div>
+  <div class="hero-content fade-up">
+    <div class="hero-tag"><span class="dot"></span> AI-Powered Business Growth</div>
+    <h1 class="hero-title">Your Business<br>on <span class="grad">Autopilot.</span></h1>
+    <p class="hero-sub">An AI platform that actively acquires new clients, manages campaigns, and scales your business 24/7 — while you focus on what matters.</p>
+    <div class="hero-btns">
+      <a href="free-demo.html" class="btn-primary btn-lg">Get Started Free</a>
+      <a href="free-demo.html" class="btn-outline btn-lg">📞 Book Strategy Call</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-mockup">
+      <div class="mockup-bar">
+        <div class="mockup-dot"></div><div class="mockup-dot"></div><div class="mockup-dot"></div>
+        <span style="font-size:.72rem;color:var(--text-muted);margin-left:auto;">TRIGDA Dashboard</span>
+      </div>
+      <div class="mockup-row">
+        <div class="mockup-icon">🤖</div>
+        <div style="flex:1"><div class="mockup-line accent" style="margin-bottom:5px;height:7px;"></div><div class="mockup-line short" style="height:5px;"></div></div>
+        <span style="font-size:.72rem;color:#00e5ff;font-weight:700;">+24.8%</span>
+      </div>
+      <div class="mockup-row">
+        <div class="mockup-icon" style="background:rgba(109,40,217,0.3);">📧</div>
+        <div style="flex:1"><div class="mockup-line" style="margin-bottom:5px;height:7px;max-width:80%;"></div><div class="mockup-line short" style="height:5px;"></div></div>
+        <span style="font-size:.72rem;color:#a78bfa;font-weight:700;">4.2K leads</span>
+      </div>
+      <div class="mockup-stats">
+        <div class="mockup-stat-box"><div class="mockup-stat">0.8s</div><div class="mockup-sublabel">Avg Response</div></div>
+        <div class="mockup-stat-box"><div class="mockup-stat">98%</div><div class="mockup-sublabel">Uptime</div></div>
+        <div class="mockup-stat-box"><div class="mockup-stat">24/7</div><div class="mockup-sublabel">Active</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <div class="ticker-item"><span class="ticker-dot"></span> <strong>$135 Premium Lead</strong> acquired</div>
+    <div class="ticker-item"><span class="ticker-dot"></span> AI Chatbot closed <strong>12 deals today</strong></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> Email campaign delivered <strong>4,200 contacts</strong></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> Response time: <strong>0.8 seconds avg</strong></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> Lead qualification: <strong>24.8% conversion</strong></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> <strong>98.7% uptime</strong> this month</div>
+    <div class="ticker-item"><span class="ticker-dot"></span> <strong>$135 Premium Lead</strong> acquired</div>
+    <div class="ticker-item"><span class="ticker-dot"></span> AI Chatbot closed <strong>12 deals today</strong></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> Email campaign delivered <strong>4,200 contacts</strong></div>
+    <div class="ticker-item"><span class="ticker-dot"></span> Response time: <strong>0.8 seconds avg</strong></div>
+  </div>
+</div>
+
+<!-- BUILT FOR HIGH-GROWTH TEAMS — Cards Connected to Pages -->
+<section class="section">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-tag">🚀 Features</div>
+      <h2 class="section-title">Built for <span class="highlight">High-Growth</span> Teams</h2>
+      <p class="section-sub">Every tool you need to scale faster — AI-powered, always-on, and built for results.</p>
+    </div>
+    <div class="grid-4" style="margin-top:3rem;">
+      <!-- Card 1: Web Development -->
+      <a href="web-development.html" class="card feature-card fade-up" style="text-decoration:none;">
+        <div class="icon-badge">🌐</div>
+        <h3>Web Development</h3>
+        <p>Responsive, modern business websites with working forms, booking, and integrations — built to convert visitors into leads.</p>
+        <span class="learn-more">Explore Web Development →</span>
+      </a>
+      <!-- Card 2: Lead Generation -->
+      <a href="lead-generation.html" class="card feature-card fade-up" style="text-decoration:none;">
+        <div class="icon-badge">📧</div>
+        <h3>Lead Generation</h3>
+        <p>Automated email sequences that nurture leads, re-engage cold contacts, and convert prospects into paying customers — without lifting a finger.</p>
+        <span class="learn-more">Explore Lead Generation →</span>
+      </a>
+      <!-- Card 3: AI Chatbot -->
+      <a href="ai-agent.html" class="card feature-card fade-up" style="text-decoration:none;">
+        <div class="icon-badge">🤖</div>
+        <h3>AI Chatbot</h3>
+        <p>Deploy an intelligent chatbot that qualifies leads, answers questions, and books appointments 24/7 — responding in under 1 second.</p>
+        <span class="learn-more">Explore AI Chatbot →</span>
+      </a>
+      <!-- Card 4: AI Automation -->
+      <a href="ai-automation.html" class="card feature-card fade-up" style="text-decoration:none;">
+        <div class="icon-badge">⚡</div>
+        <h3>AI Automation</h3>
+        <p>Connect your entire tech stack and automate repetitive workflows. From lead capture to follow-up, every step runs on autopilot.</p>
+        <span class="learn-more">Explore AI Automation →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 3-STEP INTEGRATION -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="section-tag">⚙️ How It Works</div>
+      <h2 class="section-title">The 3-Step <span class="highlight">Integration</span></h2>
+      <p class="section-sub">Get your business running on AI in under 48 hours with our simple setup process.</p>
+    </div>
+    <div class="steps-grid" style="margin-top:3.5rem;">
+      <div class="step-card card fade-up">
+        <div class="step-num-circle">01</div>
+        <h3>Connect Ecosystem</h3>
+        <p style="color:var(--text-secondary);font-size:.9rem;margin-top:.5rem;">Integrate your existing tools — CRM, email, calendar, and communication platforms — in a few clicks with 200+ native integrations.</p>
+      </div>
+      <div class="step-card card fade-up">
+        <div class="step-num-circle">02</div>
+        <h3>Configure Logic</h3>
+        <p style="color:var(--text-secondary);font-size:.9rem;margin-top:.5rem;">Define your ideal customer profile, sales workflows, and automation rules. Our AI adapts and learns from every interaction.</p>
+      </div>
+      <div class="step-card card fade-up">
+        <div class="step-num-circle">03</div>
+        <h3>Launch & Scale</h3>
+        <p style="color:var(--text-secondary);font-size:.9rem;margin-top:.5rem;">Go live and watch your pipeline fill automatically. Monitor performance with real-time analytics and scale what works.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEEING IS BELIEVING — Gemini Powered Live Demo -->
+<section class="section proof-section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:2rem;">
+      <div class="section-tag">📊 Proof</div>
+      <h2 class="section-title">Seeing is <span class="highlight">Believing</span></h2>
+      <p class="section-sub" style="margin:0 auto;">Real numbers from real businesses. Our AI agents don't just talk — they deliver measurable results from day one.</p>
+    </div>
+    <div class="proof-stats fade-up" style="max-width:640px;margin:0 auto;">
+      <div class="card" style="text-align:center;padding:1.5rem;"><div class="stat-value">24.8%</div><div class="stat-label">Lead Conversion Rate</div></div>
+      <div class="card" style="text-align:center;padding:1.5rem;"><div class="stat-value">0.8s</div><div class="stat-label">Avg AI Response</div></div>
+      <div class="card" style="text-align:center;padding:1.5rem;"><div class="stat-value">3.4x</div><div class="stat-label">ROI Increase</div></div>
+      <div class="card" style="text-align:center;padding:1.5rem;"><div class="stat-value">98.7%</div><div class="stat-label">Platform Uptime</div></div>
+    </div>
+    <p style="text-align:center;color:var(--text-muted);font-size:.85rem;margin-top:2rem;">💬 Try our AI assistant — click the chat icon in the bottom-right corner.</p>
+  </div>
+</section>
+
+<!-- EVERYTHING YOU NEED -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="section-tag">🛠️ Platform</div>
+      <h2 class="section-title">Everything You <span class="highlight">Need to Scale</span></h2>
+      <p class="section-sub">One platform, infinite possibilities. Replace 10+ tools with a single AI-powered growth engine.</p>
+    </div>
+    <div class="features-grid">
+      <div class="card feat-card fade-up"><div class="feat-icon">🕐</div><div><h4>24/7 AI Support</h4><p>Never miss a lead. Our AI handles queries round the clock, every day of the year without breaks.</p></div></div>
+      <div class="card feat-card fade-up"><div class="feat-icon">🎯</div><div><h4>Smart Lead Qualification</h4><p>Automatically score and qualify leads so your team only talks to people ready to buy.</p></div></div>
+      <div class="card feat-card fade-up"><div class="feat-icon">🔄</div><div><h4>Automated Sequences</h4><p>Multi-touch follow-up sequences across email, SMS, and chat — all running on autopilot.</p></div></div>
+      <div class="card feat-card fade-up"><div class="feat-icon">📈</div><div><h4>Advanced Analytics</h4><p>Real-time dashboards showing pipeline health, conversion rates, and revenue attribution.</p></div></div>
+      <div class="card feat-card fade-up"><div class="feat-icon">🔗</div><div><h4>Tool Integrations</h4><p>Connect with 200+ platforms including Salesforce, HubSpot, Slack, Zapier, and more.</p></div></div>
+      <div class="card feat-card fade-up"><div class="feat-icon">💬</div><div><h4>Conversation Insights</h4><p>AI-powered analysis of every customer conversation to surface trends and opportunities.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="section-tag">⭐ Testimonials</div>
+      <h2 class="section-title">What Our <span class="highlight">Clients Say</span></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="card testimonial-card fade-up">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">TRIGDA completely transformed our lead generation. We went from chasing prospects to having a full pipeline within 2 weeks. The ROI has been insane — we closed 3x more deals last month.</p>
+        <div class="testimonial-author"><div class="author-avatar">FK</div><div><div class="author-name">Fahad Khan</div><div class="author-role">CEO, GrowthX Agency</div></div></div>
+      </div>
+      <div class="card testimonial-card fade-up">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">The AI chatbot qualifies leads better than our human SDRs did. It asks the right questions, books meetings automatically, and never gets tired. Our cost per acquisition dropped by 60%.</p>
+        <div class="testimonial-author"><div class="author-avatar">SA</div><div><div class="author-name">Sarah Ahmed</div><div class="author-role">Founder, PropTech Solutions</div></div></div>
+      </div>
+      <div class="card testimonial-card fade-up">
+        <div class="quote-mark">"</div>
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">Setup took less than 2 days. Within the first week, our AI was running email sequences, chatting with leads, and booking demos on autopilot. It's like having a 24/7 sales team on standby.</p>
+        <div class="testimonial-author"><div class="author-avatar">TW</div><div><div class="author-name">Thomas Wright</div><div class="author-role">Director, ScaleUp Digital</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES OVERVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-up">
+      <div class="section-tag" style="font-size:.7rem;letter-spacing:1.5px;">🧩 Our Services</div>
+      <h2 class="section-title">Everything Under <span class="highlight">One Roof</span></h2>
+      <p class="section-sub">Four services that work standalone or together as one growth system. Book a call for a scope and quote tailored to your business.</p>
+    </div>
+    <div class="features-grid fade-up" style="margin-top:3rem;">
+      <a href="web-development.html" class="card feature-card">
+        <div class="icon-badge">🌐</div>
+        <h3>Web Development</h3>
+        <p>Responsive, modern business websites with working forms, booking, and integrations — built to convert visitors into leads.</p>
+        <span class="learn-more">Explore Web Development →</span>
+      </a>
+      <a href="ai-agent.html" class="card feature-card">
+        <div class="icon-badge">🤖</div>
+        <h3>AI Chatbot Agent</h3>
+        <p>A 24/7 AI assistant that answers FAQs, qualifies visitors, and books appointments without a human on standby.</p>
+        <span class="learn-more">Explore AI Agent →</span>
+      </a>
+      <a href="lead-generation.html" class="card feature-card">
+        <div class="icon-badge">🎯</div>
+        <h3>Lead Generation</h3>
+        <p>Targeted B2B/B2C prospecting and outreach so your pipeline stays full with the right kind of customer.</p>
+        <span class="learn-more">Explore Lead Generation →</span>
+      </a>
+      <a href="ai-automation.html" class="card feature-card">
+        <div class="icon-badge">⚡</div>
+        <h3>AI Automation</h3>
+        <p>Connect your existing tools and automate the repetitive follow-ups, reminders, and reporting eating your team's time.</p>
+        <span class="learn-more">Explore AI Automation →</span>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;">
+      <a href="services-overview.html" style="color:var(--accent-cyan);font-size:.9rem;font-weight:600;text-decoration:underline;text-underline-offset:3px;">See all services in detail →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MID-PAGE APPOINTMENT CTA -->
+<section class="section section-sm" style="background:var(--bg-secondary);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+  <div class="container">
+    <div class="cta-box fade-up" style="padding:3rem 2rem;">
+      <div class="section-tag" style="margin:0 auto 1rem;">📅 Book A Call</div>
+      <h2 class="section-title" style="font-size:clamp(1.6rem,3.5vw,2.2rem);">Not sure where to start?</h2>
+      <p class="section-sub" style="margin:0 auto 1.5rem;">Book a free 30-minute appointment and we'll figure out the right starting point for your business together — no pressure, no obligation.</p>
+      <div class="cta-btns">
+        <a href="free-demo.html" class="btn-primary btn-lg">📅 Book Appointment</a>
+        <a href="contact.html" class="btn-outline btn-lg">Ask a Question First</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="section final-cta">
+  <div class="container">
+    <div class="cta-box fade-up">
+      <div class="glow-orb glow-blue" style="width:400px;height:400px;top:50%;left:50%;transform:translate(-50%,-50%);opacity:.08;"></div>
+      <div class="section-tag" style="margin:0 auto 1.5rem;">🚀 Get Started Today</div>
+      <h2 class="section-title">Start Automating Your<br><span class="highlight">Business with AI Today</span></h2>
+      <p style="color:var(--text-secondary);max-width:500px;margin:1rem auto;font-size:1rem;">Launch in 48 hours and see real automation in minutes. No technical expertise required.</p>
+      <div class="cta-btns">
+        <a href="free-demo.html" class="btn-primary btn-lg">Book Appointment</a>
+        <a href="services-overview.html" class="btn-outline btn-lg">See All Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container" style="max-width:780px;">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="section-tag">❓ FAQ</div>
+      <h2 class="section-title">Common <span class="highlight">Questions</span></h2>
+    </div>
+    <div class="faq-list fade-up">
+      <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)">How long does it take to set up? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Most businesses are live within 24–48 hours. Our onboarding team handles the technical setup, and we provide a step-by-step guide so you can be operational quickly without any coding required.</p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)">Can I integrate with my existing CRM? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes! TRIGDA natively integrates with 200+ tools including Salesforce, HubSpot, Pipedrive, GoHighLevel, and more. We also support Zapier and custom webhooks for any tool not on our list.</p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)">Does this work for multiple languages? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Absolutely. Our AI supports 50+ languages including English, Arabic, Urdu, Spanish, French, and more. The chatbot automatically detects and responds in the customer's preferred language.</p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)">Is there a free trial available? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes! We offer a 14-day free trial on all plans — no credit card required. You can also book a personalized demo to see the platform in action before committing.</p></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)">How does AI lead qualification work? <span class="faq-icon">+</span></button><div class="faq-answer"><p>Our AI uses a custom qualification framework based on your ideal customer profile. It asks targeted questions, scores responses in real-time, and only passes high-intent leads to your sales team — saving hours of manual work daily.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">TRIGDA</div>
+        <p class="footer-desc">The AI-powered growth platform that puts your business on autopilot. Acquire clients, manage campaigns, and scale revenue — 24/7.</p>
+        <div class="social-links" style="margin-top:1.5rem;">
+          <a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">fb</a><a href="#" class="social-link">▶</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul>
+        <li><a href="ai-agent.html">AI Agent</a></li>
+        <li><a href="lead-generation.html">Lead Generation</a></li>
+        <li><a href="ai-automation.html">AI Automation</a></li>
+        <li><a href="web-development.html">Web Development</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="free-demo.html">Free Demo</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+        <li><a href="#">GDPR</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 TRIGDA. All rights reserved.</p>
+      <p style="color:var(--accent);font-size:.78rem;">🔒 SOC 2 Compliant · GDPR Ready · 99.9% Uptime</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Navbar scroll
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').style.background = window.scrollY > 50 ? 'rgba(6,6,14,0.98)' : 'rgba(6,6,14,0.85)';
+});
+
+function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+
+function toggleFAQ(btn) {
+  const item = btn.parentElement;
+  const answer = item.querySelector('.faq-answer');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-answer').style.maxHeight = '0'; });
+  if (!isOpen) { item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+}
+
+// Init chat counter on load
+document.addEventListener('DOMContentLoaded', () => {
+  const count = getMsgCount();
+  msgCount = count;
+  document.getElementById('msgCount').textContent = count;
+  if (count >= MSG_LIMIT) {
+    document.getElementById('chatInput').placeholder = 'Limit reached! Come back in 12 hours.';
+    document.getElementById('chatInput').disabled = true;
+    document.getElementById('sendBtn').textContent = 'Book Demo';
+    document.getElementById('sendBtn').onclick = () => window.location.href = 'free-demo.html';
+  }
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+<!-- Floating AI Chat Widget -->
+<button class="chat-widget-launcher" id="chatWidgetLauncher" aria-label="Open TRIGDA AI Assistant" aria-expanded="false">💬</button>
+<div class="chat-widget-panel" id="chatWidgetPanel">
+  <div class="chat-widget-header">
+    <div>
+      <div class="chat-widget-header-title">TRIGDA AI Assistant</div>
+      <div class="chat-widget-header-sub"><span style="width:6px;height:6px;background:#00c864;border-radius:50%;display:inline-block;box-shadow:0 0 6px #00c864;"></span> Online — powered by Gemini</div>
+    </div>
+    <button class="chat-widget-close" id="chatWidgetClose" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-widget-body">
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg">
+        <div class="chat-avatar ai">AI</div>
+        <div class="chat-bubble ai-bubble">Hey! 👋 I'm TRIGDA's intelligent assistant. Ask me anything about our services, process, or booking an appointment!</div>
+      </div>
+    </div>
+    <div class="chat-msg typing-indicator" id="typingIndicator">
+      <div class="chat-avatar ai">AI</div>
+      <div class="chat-bubble ai-bubble"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="chat-widget-footer">
+    <div class="chat-msg-counter">Messages used: <span id="msgCount">0</span>/10</div>
+    <div class="chat-bar">
+      <input class="chat-input-field" id="chatInput" placeholder="Ask about services, process..." onkeydown="if(event.key==='Enter')sendMessage()">
+      <button class="btn-primary btn-sm" onclick="sendMessage()" id="sendBtn">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHAT LIMIT POPUP -->
+<div class="chat-limit-overlay" id="chatLimitOverlay">
+  <div class="chat-limit-box">
+    <span class="limit-icon">🚀</span>
+    <h3>Free Message Limit Reached!</h3>
+    <p>You've used your 10 free messages. Your limit will reset in <strong id="timeLeftDisplay" style="color:var(--accent-cyan);">12h 0m</strong>. Or book a free appointment to get personalized answers from our team!</p>
+    <a href="free-demo.html" class="btn-primary btn-lg" style="display:block;width:100%;text-align:center;margin-bottom:.8rem;">
+      📅 Book Appointment
+    </a>
+    <button onclick="document.getElementById('chatLimitOverlay').classList.remove('show')"
+      style="background:none;border:none;color:var(--text-muted);font-size:.82rem;cursor:pointer;font-family:inherit;">
+      Maybe later
+    </button>
+  </div>
+</div>
+<script src="chatbot-widget.js"></script>
+
+</body>
+</html>

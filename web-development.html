@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Development — TRIGDA | Modern Business Websites</title>
+<meta name="description" content="TRIGDA builds responsive, modern business websites with working forms, booking systems, and integrations — designed to convert visitors into leads.">
+<meta name="keywords" content="web development Pakistan, business website design Gujranwala, responsive website development, website with booking form, custom website design">
+<link rel="canonical" href="https://trigda.online/web-development.html">
+<meta property="og:title" content="Web Development — TRIGDA">
+<meta property="og:description" content="Responsive, modern business websites built to convert — with working forms, booking, and integrations.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+.browser-mockup {
+  background:var(--bg-card); border:1px solid var(--border);
+  border-radius:var(--r-lg); overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+.browser-bar { display:flex; align-items:center; gap:.5rem; padding:.8rem 1rem; background:var(--bg-secondary); border-bottom:1px solid var(--border); }
+.browser-dot { width:10px; height:10px; border-radius:50%; }
+.browser-dot:nth-child(1){background:#ff5f57} .browser-dot:nth-child(2){background:#febc2e} .browser-dot:nth-child(3){background:#28c840}
+.browser-url { flex:1; margin-left:.6rem; background:var(--bg-card); border-radius:var(--r-xl); padding:.3rem .9rem; font-size:.72rem; color:var(--text-muted); }
+.browser-body { padding:1.4rem; display:flex; flex-direction:column; gap:.8rem; }
+.mock-nav { display:flex; justify-content:space-between; align-items:center; margin-bottom:.4rem; }
+.mock-logo { width:60px; height:10px; border-radius:4px; background:var(--btn-grad); }
+.mock-links { display:flex; gap:.5rem; }
+.mock-link { width:34px; height:8px; border-radius:4px; background:rgba(255,255,255,0.14); }
+.mock-hero-line { height:14px; border-radius:5px; background:rgba(255,255,255,0.14); }
+.mock-hero-line.w80{width:80%;} .mock-hero-line.w60{width:60%;} .mock-hero-line.w40{width:40%;}
+.mock-btn { width:110px; height:30px; border-radius:var(--r-xl); background:var(--btn-grad); margin-top:.4rem; }
+.mock-cards { display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; margin-top:.6rem; }
+.mock-card { background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:var(--r-sm); padding:.7rem; height:70px; }
+
+.wd-includes { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
+.wd-stack { display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; }
+.stack-pill { display:flex; flex-direction:column; align-items:center; gap:.5rem; padding:1.2rem .8rem; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--r-md); text-align:center; transition:.25s; }
+.stack-pill:hover { border-color:var(--border-hover); transform:translateY(-3px); }
+.stack-pill span { font-size:.78rem; color:var(--text-secondary); font-weight:500; }
+
+@media(max-width:900px){ .wd-includes{grid-template-columns:1fr;} .wd-stack{grid-template-columns:repeat(2,1fr);} .mock-cards{grid-template-columns:1fr;} }
+@media(max-width:900px){ .wd-hero-grid{grid-template-columns:1fr !important;} }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">TRIGDA</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="ai-agent.html">AI Agent</a>
+    <a href="lead-generation.html">Lead Generation</a>
+    <a href="ai-automation.html">AI Automation</a>
+    <a href="web-development.html" class="active">Web Development</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-cta"><a href="free-demo.html" class="btn-primary btn-sm">Book Appointment</a></div>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="ai-agent.html">AI Agent</a>
+  <a href="lead-generation.html">Lead Generation</a><a href="ai-automation.html">AI Automation</a>
+  <a href="web-development.html">Web Development</a><a href="contact.html">Contact</a>
+  <a href="free-demo.html" class="btn-primary" style="text-align:center;margin-top:.5rem;">Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="glow-orb glow-blue" style="width:500px;height:500px;top:-150px;left:50%;transform:translateX(-50%);opacity:.14;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="fade-up">
+      <div class="section-tag">🌐 Web Development</div>
+      <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.4rem);">A Website That<br><span class="highlight">Actually Converts.</span></h1>
+      <p class="section-sub">Responsive, modern business websites with working forms, booking, and integrations — built to turn visitors into inquiries, not just look good.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:2rem;">
+        <a href="free-demo.html" class="btn-primary btn-lg">Book Appointment</a>
+        <a href="#included" class="btn-outline btn-lg">See What's Included</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="section">
+  <div class="container">
+    <div class="wd-hero-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;">
+      <div class="fade-up">
+        <div class="section-tag">✨ Built For You</div>
+        <h2 class="section-title">Not a <span class="highlight">Template</span></h2>
+        <p class="section-sub" style="margin-bottom:1.5rem;">Every site starts with how your business actually operates — real forms, real integrations, real content structure. No drag-and-drop template pretending to be custom work.</p>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="display:flex;align-items:center;gap:.9rem;"><div style="width:20px;height:20px;border-radius:50%;background:var(--btn-grad);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;">✓</div><span style="font-size:.9rem;color:var(--text-secondary);">Mobile-first, responsive on every screen</span></div>
+          <div style="display:flex;align-items:center;gap:.9rem;"><div style="width:20px;height:20px;border-radius:50%;background:var(--btn-grad);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;">✓</div><span style="font-size:.9rem;color:var(--text-secondary);">Working contact & booking forms from day one</span></div>
+          <div style="display:flex;align-items:center;gap:.9rem;"><div style="width:20px;height:20px;border-radius:50%;background:var(--btn-grad);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;">✓</div><span style="font-size:.9rem;color:var(--text-secondary);">SEO basics built in — titles, meta tags, sitemap</span></div>
+          <div style="display:flex;align-items:center;gap:.9rem;"><div style="width:20px;height:20px;border-radius:50%;background:var(--btn-grad);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;">✓</div><span style="font-size:.9rem;color:var(--text-secondary);">Deployed and ready — no loose ends at launch</span></div>
+        </div>
+      </div>
+      <div class="browser-mockup fade-up">
+        <div class="browser-bar">
+          <div class="browser-dot"></div><div class="browser-dot"></div><div class="browser-dot"></div>
+          <div class="browser-url">yourbusiness.com</div>
+        </div>
+        <div class="browser-body">
+          <div class="mock-nav"><div class="mock-logo"></div><div class="mock-links"><div class="mock-link"></div><div class="mock-link"></div><div class="mock-link"></div></div></div>
+          <div class="mock-hero-line w80"></div>
+          <div class="mock-hero-line w60"></div>
+          <div class="mock-hero-line w40" style="margin-bottom:.3rem;"></div>
+          <div class="mock-btn"></div>
+          <div class="mock-cards">
+            <div class="mock-card"></div><div class="mock-card"></div><div class="mock-card"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section id="included" class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="section-tag">📦 What's Included</div>
+      <h2 class="section-title">Everything A Launch <span class="highlight">Needs</span></h2>
+    </div>
+    <div class="wd-includes fade-up">
+      <div class="card" style="display:flex;gap:1rem;align-items:flex-start;"><div class="icon-badge" style="margin-bottom:0;">🎨</div><div><h4 style="font-weight:700;margin-bottom:.4rem;">Custom Design</h4><p style="color:var(--text-secondary);font-size:.88rem;">A layout and visual identity built around your brand, not a recycled theme.</p></div></div>
+      <div class="card" style="display:flex;gap:1rem;align-items:flex-start;"><div class="icon-badge" style="margin-bottom:0;">📝</div><div><h4 style="font-weight:700;margin-bottom:.4rem;">Working Forms</h4><p style="color:var(--text-secondary);font-size:.88rem;">Contact and booking forms that actually deliver submissions to your inbox.</p></div></div>
+      <div class="card" style="display:flex;gap:1rem;align-items:flex-start;"><div class="icon-badge" style="margin-bottom:0;">📱</div><div><h4 style="font-weight:700;margin-bottom:.4rem;">Mobile Optimization</h4><p style="color:var(--text-secondary);font-size:.88rem;">Tested across phones, tablets, and desktops — no broken layouts, ever.</p></div></div>
+      <div class="card" style="display:flex;gap:1rem;align-items:flex-start;"><div class="icon-badge" style="margin-bottom:0;">🔌</div><div><h4 style="font-weight:700;margin-bottom:.4rem;">Integrations</h4><p style="color:var(--text-secondary);font-size:.88rem;">Connect the chatbot, booking system, and tools you already use.</p></div></div>
+      <div class="card" style="display:flex;gap:1rem;align-items:flex-start;"><div class="icon-badge" style="margin-bottom:0;">🔍</div><div><h4 style="font-weight:700;margin-bottom:.4rem;">SEO Foundations</h4><p style="color:var(--text-secondary);font-size:.88rem;">Clean titles, meta descriptions, sitemap, and structure search engines can read.</p></div></div>
+      <div class="card" style="display:flex;gap:1rem;align-items:flex-start;"><div class="icon-badge" style="margin-bottom:0;">🚀</div><div><h4 style="font-weight:700;margin-bottom:.4rem;">Launch & Support</h4><p style="color:var(--text-secondary);font-size:.88rem;">We go live, then stay available for fixes and small improvements.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILT WITH -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="section-tag">🧱 Built With</div>
+      <h2 class="section-title">Modern, <span class="highlight">Reliable</span> Tech</h2>
+      <p class="section-sub">No bloated page-builders — clean, fast-loading code that's easy to maintain.</p>
+    </div>
+    <div class="wd-stack fade-up">
+      <div class="stack-pill"><div class="int-icon">🧩</div><span>HTML / CSS / JS</span></div>
+      <div class="stack-pill"><div class="int-icon">⚛️</div><span>React (when needed)</span></div>
+      <div class="stack-pill"><div class="int-icon">📬</div><span>Form & Email Integration</span></div>
+      <div class="stack-pill"><div class="int-icon">☁️</div><span>Fast, Reliable Hosting</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="section-tag">💡 Who It's For</div>
+      <h2 class="section-title">Built For <span class="highlight">Real Businesses</span></h2>
+    </div>
+    <div class="grid-3 fade-up">
+      <div class="card"><div class="icon-badge">🏪</div><h3 style="font-size:1rem;margin-bottom:.5rem;">Local Businesses</h3><p style="font-size:.88rem;color:var(--text-secondary);">A credible online presence with a working contact and booking flow.</p></div>
+      <div class="card"><div class="icon-badge">🧑‍💼</div><h3 style="font-size:1rem;margin-bottom:.5rem;">Personal Brands</h3><p style="font-size:.88rem;color:var(--text-secondary);">A site that reflects your positioning and makes you easy to book or hire.</p></div>
+      <div class="card"><div class="icon-badge">📈</div><h3 style="font-size:1rem;margin-bottom:.5rem;">Growing Teams</h3><p style="font-size:.88rem;color:var(--text-secondary);">A site ready to plug into lead generation and automation as you scale.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-box fade-up">
+      <h2 class="section-title">Ready For A Site That <span class="highlight">Works?</span></h2>
+      <p style="color:var(--text-secondary);max-width:500px;margin:1rem auto;">Book a free appointment and tell us what you're trying to build — we'll scope it and quote it on the call.</p>
+      <div class="cta-btns">
+        <a href="free-demo.html" class="btn-primary btn-lg">Book Appointment</a>
+        <a href="services-overview.html" class="btn-outline btn-lg">See All Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">TRIGDA</div><p class="footer-desc">Websites, lead generation, and AI automation for businesses that want to grow without adding overhead.</p></div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="ai-agent.html">AI Agent</a></li><li><a href="lead-generation.html">Lead Generation</a></li><li><a href="ai-automation.html">AI Automation</a></li><li><a href="web-development.html">Web Development</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="services-overview.html">All Services</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 TRIGDA. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('navbar').style.background=window.scrollY>50?'rgba(6,6,14,0.98)':'rgba(6,6,14,0.85)';});
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+
+<!-- Floating AI Chat Widget -->
+<button class="chat-widget-launcher" id="chatWidgetLauncher" aria-label="Open TRIGDA AI Assistant" aria-expanded="false">💬</button>
+<div class="chat-widget-panel" id="chatWidgetPanel">
+  <div class="chat-widget-header">
+    <div>
+      <div class="chat-widget-header-title">TRIGDA AI Assistant</div>
+      <div class="chat-widget-header-sub"><span style="width:6px;height:6px;background:#00c864;border-radius:50%;display:inline-block;box-shadow:0 0 6px #00c864;"></span> Online — powered by Gemini</div>
+    </div>
+    <button class="chat-widget-close" id="chatWidgetClose" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-widget-body">
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg">
+        <div class="chat-avatar ai">AI</div>
+        <div class="chat-bubble ai-bubble">Hey! 👋 I'm TRIGDA's intelligent assistant. Ask me anything about our services, process, or booking an appointment!</div>
+      </div>
+    </div>
+    <div class="chat-msg typing-indicator" id="typingIndicator">
+      <div class="chat-avatar ai">AI</div>
+      <div class="chat-bubble ai-bubble"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="chat-widget-footer">
+    <div class="chat-msg-counter">Messages used: <span id="msgCount">0</span>/10</div>
+    <div class="chat-bar">
+      <input class="chat-input-field" id="chatInput" placeholder="Ask about services, process..." onkeydown="if(event.key==='Enter')sendMessage()">
+      <button class="btn-primary btn-sm" onclick="sendMessage()" id="sendBtn">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHAT LIMIT POPUP -->
+<div class="chat-limit-overlay" id="chatLimitOverlay">
+  <div class="chat-limit-box">
+    <span class="limit-icon">🚀</span>
+    <h3>Free Message Limit Reached!</h3>
+    <p>You've used your 10 free messages. Your limit will reset in <strong id="timeLeftDisplay" style="color:var(--accent-cyan);">12h 0m</strong>. Or book a free appointment to get personalized answers from our team!</p>
+    <a href="free-demo.html" class="btn-primary btn-lg" style="display:block;width:100%;text-align:center;margin-bottom:.8rem;">
+      📅 Book Appointment
+    </a>
+    <button onclick="document.getElementById('chatLimitOverlay').classList.remove('show')"
+      style="background:none;border:none;color:var(--text-muted);font-size:.82rem;cursor:pointer;font-family:inherit;">
+      Maybe later
+    </button>
+  </div>
+</div>
+<script src="chatbot-widget.js"></script>
+
+</body>
+</html>

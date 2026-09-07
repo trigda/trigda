@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Chatbot Agent — TRIGDA | 24/7 AI Assistant for Your Business</title>
+<meta name="description" content="Deploy a 24/7 AI chatbot agent that answers FAQs, qualifies leads, and books appointments automatically — no coding required.">
+<meta name="keywords" content="AI chatbot agent, AI customer service bot, automated lead qualification, chatbot for business Pakistan">
+<link rel="canonical" href="https://trigda.online/ai-agent.html">
+<meta property="og:title" content="AI Chatbot Agent — TRIGDA | 24/7 AI Assistant for Your Business">
+<meta property="og:description" content="Deploy a 24/7 AI chatbot agent that answers FAQs, qualifies leads, and books appointments automatically — no coding required.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+.agent-demo-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:start; margin-top:4rem; }
+.chat-window {
+  background:var(--bg-card); border:1px solid var(--border);
+  border-radius:var(--r-lg); overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+.chat-header {
+  background:var(--bg-secondary); padding:1rem 1.5rem;
+  display:flex; align-items:center; gap:.8rem;
+  border-bottom:1px solid var(--border);
+}
+.chat-status { width:8px; height:8px; background:#00c864; border-radius:50%; flex-shrink:0; box-shadow:0 0 6px #00c864; }
+.chat-body { padding:1.5rem; min-height:380px; display:flex; flex-direction:column; gap:1rem; }
+.chat-msg { display:flex; gap:.8rem; }
+.chat-msg.user { flex-direction:row-reverse; }
+.chat-avatar { width:32px; height:32px; border-radius:50%; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:.7rem; font-weight:700; color:#fff; }
+.chat-avatar.ai-av { background:var(--btn-grad); }
+.chat-avatar.user-av { background:var(--bg-secondary); color:var(--text-secondary); border:1px solid var(--border); }
+.chat-bubble { background:var(--bg-secondary); border-radius:0 var(--r-md) var(--r-md) var(--r-md); padding:.75rem 1rem; font-size:.84rem; color:var(--text-secondary); line-height:1.55; max-width:78%; }
+.chat-bubble.ai { background:rgba(0,170,255,0.1); color:var(--text-primary); border-radius:0 var(--r-md) var(--r-md) var(--r-md); }
+.chat-bubble.user-b { border-radius:var(--r-md) 0 var(--r-md) var(--r-md); background:rgba(109,40,217,0.2); color:var(--text-primary); }
+.chat-footer { padding:1rem 1.5rem; border-top:1px solid var(--border); display:flex; gap:.7rem; }
+.chat-footer input { flex:1; background:var(--bg-secondary); border:1px solid var(--border); border-radius:var(--r-xl); padding:.6rem 1rem; color:var(--text-primary); font-size:.84rem; font-family:inherit; outline:none; }
+.typing { display:flex; align-items:center; gap:4px; padding:.5rem .75rem; }
+.typing span { width:6px; height:6px; background:var(--accent); border-radius:50%; animation:bounce 1.2s infinite; }
+.typing span:nth-child(2) { animation-delay:.2s; }
+.typing span:nth-child(3) { animation-delay:.4s; }
+@keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-8px)} }
+
+.capabilities-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.2rem; }
+.cap-item { display:flex; align-items:flex-start; gap:1rem; padding:1.2rem; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--r-md); transition:.2s; }
+.cap-item:hover { border-color:var(--border-hover); }
+.cap-icon { font-size:1.3rem; flex-shrink:0; }
+.cap-item h4 { font-size:.9rem; font-weight:700; margin-bottom:.25rem; }
+.cap-item p { font-size:.8rem; color:var(--text-secondary); line-height:1.5; }
+
+.use-cases { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+
+@media(max-width:900px) {
+  .agent-demo-grid { grid-template-columns:1fr; }
+  .use-cases { grid-template-columns:1fr 1fr; }
+  .capabilities-grid { grid-template-columns:1fr; }
+}
+@media(max-width:600px) {
+  .use-cases { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">TRIGDA</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="ai-agent.html" class="active">AI Agent</a>
+    <a href="lead-generation.html">Lead Generation</a>
+    <a href="ai-automation.html">AI Automation</a>
+    <a href="web-development.html">Web Development</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <a href="free-demo.html" class="btn-primary btn-sm">Book Appointment</a>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="ai-agent.html">AI Agent</a>
+  <a href="lead-generation.html">Lead Generation</a><a href="ai-automation.html">AI Automation</a>
+  <a href="web-development.html">Web Development</a><a href="contact.html">Contact</a>
+  <a href="free-demo.html" class="btn-primary" style="text-align:center;margin-top:.5rem;">Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="glow-orb glow-blue" style="width:500px;height:500px;top:-100px;left:50%;transform:translateX(-50%);opacity:.15;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="fade-up">
+      <div class="section-tag">🤖 AI Agent</div>
+      <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.4rem);">Your 24/7 <span class="highlight">AI Sales Agent</span></h1>
+      <p class="section-sub">Deploy an intelligent conversational agent that engages visitors, qualifies leads, books meetings, and closes deals — all in real time, without human intervention.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:2rem;">
+        <a href="free-demo.html" class="btn-primary btn-lg">Deploy AI Agent Free</a>
+        <a href="#live-demo" class="btn-outline btn-lg">Build A Free Demo AI Agent</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE DEMO BUILDER -->
+<section id="live-demo" class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:2rem;">
+      <div class="section-tag">🧪 Try It Live</div>
+      <h2 class="section-title">Build A <span class="highlight">Demo Agent</span> For Your Business</h2>
+      <p class="section-sub" style="margin:0 auto;">Tell us what your business does, answer a couple of quick questions, and chat with a live AI agent built around it — right here, in seconds.</p>
+    </div>
+
+    <div class="card fade-up" style="max-width:640px;margin:0 auto;padding:2rem;">
+      <div id="demoBuilderStep1">
+        <label class="form-label">What's your business?</label>
+        <input type="text" id="demoBizType" class="form-input" placeholder="e.g. Italian restaurant, hair salon, real estate agency" style="margin-top:.5rem;">
+        <button class="btn-primary" style="width:100%;margin-top:1rem;" onclick="startDemoBuilder()" id="demoStep1Btn">Generate My Demo →</button>
+        <div id="demoBuilderError" class="form-status error" style="display:none;"></div>
+      </div>
+
+      <div id="demoBuilderStep2" style="display:none;">
+        <p style="font-size:.88rem;color:var(--text-secondary);margin-bottom:1rem;">Just a couple quick details so your demo agent knows what to say:</p>
+        <div id="demoQuestionsContainer"></div>
+        <button class="btn-primary" style="width:100%;margin-top:1rem;" onclick="buildDemoAgent()" id="demoStep2Btn">Build My Chatbot →</button>
+      </div>
+
+      <div id="demoBuilderStep3" style="display:none;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+          <div style="font-weight:700;font-size:.9rem;">🤖 Your Live Demo Agent</div>
+          <button onclick="resetDemoBuilder()" style="background:none;border:none;color:var(--text-muted);font-size:.8rem;cursor:pointer;">↺ Start Over</button>
+        </div>
+        <div id="demoChatMessages" style="max-height:320px;overflow-y:auto;border:1px solid var(--border);border-radius:var(--r-md);padding:1rem;background:var(--bg-primary);display:flex;flex-direction:column;gap:.8rem;"></div>
+        <div class="chat-msg typing-indicator" id="demoTypingIndicator" style="padding:.5rem 0 0;">
+          <div class="chat-avatar ai">AI</div><div class="chat-bubble ai-bubble"><span></span><span></span><span></span></div>
+        </div>
+        <div class="chat-bar">
+          <input class="chat-input-field" id="demoChatInput" placeholder="Ask your demo agent a question..." onkeydown="if(event.key==='Enter')sendDemoMessage()">
+          <button class="btn-primary btn-sm" onclick="sendDemoMessage()" id="demoSendBtn">Send</button>
+        </div>
+        <p style="font-size:.72rem;color:var(--text-muted);margin-top:.8rem;text-align:center;">This is a quick live preview — your real deployed agent would be fully configured, tested, and connected to your booking system.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section class="section">
+  <div class="container">
+    <div class="agent-demo-grid">
+      <div class="fade-up">
+        <div class="section-tag">💬 Live Preview</div>
+        <h2 class="section-title">See Your Agent <span class="highlight">in Action</span></h2>
+        <p class="section-sub" style="margin-bottom:2rem;">This is a live demo of how TRIGDA agents engage with your website visitors. Every response is instant, intelligent, and on-brand.</p>
+        <div class="capabilities-grid">
+          <div class="cap-item">
+            <div class="cap-icon">⚡</div>
+            <div><h4>Sub-Second Responses</h4><p>Reply in under 0.8 seconds — faster than any human team.</p></div>
+          </div>
+          <div class="cap-item">
+            <div class="cap-icon">🎯</div>
+            <div><h4>Smart Qualification</h4><p>Scores leads by budget, need, and intent automatically.</p></div>
+          </div>
+          <div class="cap-item">
+            <div class="cap-icon">📅</div>
+            <div><h4>Auto Booking</h4><p>Books calendar meetings without human involvement.</p></div>
+          </div>
+          <div class="cap-item">
+            <div class="cap-icon">🌐</div>
+            <div><h4>50+ Languages</h4><p>Communicate with leads in their native language.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="chat-window fade-up">
+        <div class="chat-header">
+          <div class="chat-status"></div>
+          <span style="font-weight:700;font-size:.9rem;">TRIGDA Agent</span>
+          <span style="font-size:.75rem;color:var(--text-muted);margin-left:auto;">Online · Responding instantly</span>
+        </div>
+        <div class="chat-body" id="chatBody">
+          <div class="chat-msg">
+            <div class="chat-avatar ai-av">AI</div>
+            <div class="chat-bubble ai">Hey! 👋 Welcome to TRIGDA. I'm your AI assistant. What brings you here today?</div>
+          </div>
+          <div class="chat-msg user">
+            <div class="chat-avatar user-av">U</div>
+            <div class="chat-bubble user-b">I need help automating my sales process.</div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar ai-av">AI</div>
+            <div class="chat-bubble ai">Perfect! That's exactly what we do. Quick question — how many leads are you currently handling per month?</div>
+          </div>
+          <div class="chat-msg user">
+            <div class="chat-avatar user-av">U</div>
+            <div class="chat-bubble user-b">Around 200-300 leads a month but we can't follow up properly.</div>
+          </div>
+          <div class="chat-msg">
+            <div class="chat-avatar ai-av">AI</div>
+            <div class="chat-bubble ai">Great! With 200-300 leads, our Growth plan would be perfect — automated follow-ups, email sequences, and AI qualification. Want to see a personalized demo?</div>
+          </div>
+          <div id="typing" style="display:none;" class="chat-msg">
+            <div class="chat-avatar ai-av">AI</div>
+            <div class="chat-bubble ai"><div class="typing"><span></span><span></span><span></span></div></div>
+          </div>
+        </div>
+        <div class="chat-footer">
+          <input type="text" id="demoInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter')sendDemo()">
+          <button class="btn-primary btn-sm" onclick="sendDemo()">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="section-tag">🏢 Industries</div>
+      <h2 class="section-title">Works For <span class="highlight">Every Industry</span></h2>
+    </div>
+    <div class="use-cases">
+      <div class="card fade-up" style="text-align:center;">
+        <div class="icon-badge" style="margin:0 auto 1rem;">🏠</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">Real Estate</h3>
+        <p style="color:var(--text-secondary);font-size:.85rem;">Qualify buyers, schedule viewings, and follow up with property inquiries automatically.</p>
+      </div>
+      <div class="card fade-up" style="text-align:center;">
+        <div class="icon-badge" style="margin:0 auto 1rem;">⚕️</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">Healthcare</h3>
+        <p style="color:var(--text-secondary);font-size:.85rem;">Book patient appointments, answer FAQs, and handle after-hours inquiries 24/7.</p>
+      </div>
+      <div class="card fade-up" style="text-align:center;">
+        <div class="icon-badge" style="margin:0 auto 1rem;">💼</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">B2B SaaS</h3>
+        <p style="color:var(--text-secondary);font-size:.85rem;">Qualify trial users, guide onboarding, and convert free users to paid plans.</p>
+      </div>
+      <div class="card fade-up" style="text-align:center;">
+        <div class="icon-badge" style="margin:0 auto 1rem;">🛒</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">E-Commerce</h3>
+        <p style="color:var(--text-secondary);font-size:.85rem;">Recover abandoned carts, recommend products, and handle returns seamlessly.</p>
+      </div>
+      <div class="card fade-up" style="text-align:center;">
+        <div class="icon-badge" style="margin:0 auto 1rem;">📚</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">Education</h3>
+        <p style="color:var(--text-secondary);font-size:.85rem;">Guide prospective students, handle enrollment queries, and nurture applicants.</p>
+      </div>
+      <div class="card fade-up" style="text-align:center;">
+        <div class="icon-badge" style="margin:0 auto 1rem;">💰</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">Financial Services</h3>
+        <p style="color:var(--text-secondary);font-size:.85rem;">Pre-qualify loan applicants, answer compliance questions, and book advisor calls.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <h2 class="section-title">AI Agent <span class="highlight">Performance Stats</span></h2>
+    </div>
+    <div class="grid-3 fade-up" style="max-width:900px;margin:0 auto;">
+      <div class="card" style="text-align:center;padding:2.5rem;">
+        <div class="stat-value">0.8s</div>
+        <div class="stat-label">Average response time</div>
+      </div>
+      <div class="card" style="text-align:center;padding:2.5rem;">
+        <div class="stat-value">94%</div>
+        <div class="stat-label">Query resolution rate</div>
+      </div>
+      <div class="card" style="text-align:center;padding:2.5rem;">
+        <div class="stat-value">4.9★</div>
+        <div class="stat-label">Customer satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="section final-cta" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="cta-box fade-up">
+      <h2 class="section-title">Deploy Your AI Agent <span class="highlight">Today</span></h2>
+      <p style="color:var(--text-secondary);max-width:500px;margin:1rem auto;font-size:1rem;">Go live in 48 hours. No code required. Your AI agent will be working before your next coffee break.</p>
+      <div class="cta-btns">
+        <a href="free-demo.html" class="btn-primary btn-lg">Book Appointment</a>
+        <a href="services-overview.html" class="btn-outline btn-lg">See All Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">TRIGDA</div>
+        <p class="footer-desc">The AI-powered growth platform that puts your business on autopilot.</p>
+        <div class="social-links" style="margin-top:1.5rem;">
+          <a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">fb</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul>
+        <li><a href="ai-agent.html">AI Agent</a></li>
+        <li><a href="lead-generation.html">Lead Generation</a></li>
+        <li><a href="ai-automation.html">AI Automation</a></li>
+        <li><a href="web-development.html">Web Development</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 TRIGDA. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('navbar').style.background=window.scrollY>50?'rgba(6,6,14,0.98)':'rgba(6,6,14,0.85)';});
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+const demoReplies = [
+  "Great question! Our AI integrates with your website in minutes with a simple embed code. Would you like to see how?",
+  "Absolutely! We offer a 14-day free trial — no credit card needed. Want me to set that up for you right now?",
+  "That's a common challenge. Our automation handles that automatically. Can I schedule a quick 15-min demo call?",
+  "Perfect! Based on what you've told me, I'd recommend our Growth plan. Shall I send you a personalized breakdown?"
+];
+let replyIndex = 0;
+function sendDemo() {
+  const input = document.getElementById('demoInput');
+  const body = document.getElementById('chatBody');
+  if (!input.value.trim()) return;
+  const userMsg = `<div class="chat-msg user"><div class="chat-avatar user-av">U</div><div class="chat-bubble user-b">${input.value}</div></div>`;
+  body.insertAdjacentHTML('beforeend', userMsg);
+  input.value = '';
+  document.getElementById('typing').style.display = 'flex';
+  body.scrollTop = body.scrollHeight;
+  setTimeout(() => {
+    document.getElementById('typing').style.display = 'none';
+    const aiMsg = `<div class="chat-msg"><div class="chat-avatar ai-av">AI</div><div class="chat-bubble ai">${demoReplies[replyIndex % demoReplies.length]}</div></div>`;
+    body.insertAdjacentHTML('beforeend', aiMsg);
+    replyIndex++;
+    body.scrollTop = body.scrollHeight;
+  }, 1200);
+}
+</script>
+<!-- Floating AI Chat Widget -->
+<button class="chat-widget-launcher" id="chatWidgetLauncher" aria-label="Open TRIGDA AI Assistant" aria-expanded="false">💬</button>
+<div class="chat-widget-panel" id="chatWidgetPanel">
+  <div class="chat-widget-header">
+    <div>
+      <div class="chat-widget-header-title">TRIGDA AI Assistant</div>
+      <div class="chat-widget-header-sub"><span style="width:6px;height:6px;background:#00c864;border-radius:50%;display:inline-block;box-shadow:0 0 6px #00c864;"></span> Online — powered by Gemini</div>
+    </div>
+    <button class="chat-widget-close" id="chatWidgetClose" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-widget-body">
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg">
+        <div class="chat-avatar ai">AI</div>
+        <div class="chat-bubble ai-bubble">Hey! 👋 I'm TRIGDA's intelligent assistant. Ask me anything about our services, process, or booking an appointment!</div>
+      </div>
+    </div>
+    <div class="chat-msg typing-indicator" id="typingIndicator">
+      <div class="chat-avatar ai">AI</div>
+      <div class="chat-bubble ai-bubble"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="chat-widget-footer">
+    <div class="chat-msg-counter">Messages used: <span id="msgCount">0</span>/10</div>
+    <div class="chat-bar">
+      <input class="chat-input-field" id="chatInput" placeholder="Ask about services, process..." onkeydown="if(event.key==='Enter')sendMessage()">
+      <button class="btn-primary btn-sm" onclick="sendMessage()" id="sendBtn">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHAT LIMIT POPUP -->
+<div class="chat-limit-overlay" id="chatLimitOverlay">
+  <div class="chat-limit-box">
+    <span class="limit-icon">🚀</span>
+    <h3>Free Message Limit Reached!</h3>
+    <p>You've used your 10 free messages. Your limit will reset in <strong id="timeLeftDisplay" style="color:var(--accent-cyan);">12h 0m</strong>. Or book a free appointment to get personalized answers from our team!</p>
+    <a href="free-demo.html" class="btn-primary btn-lg" style="display:block;width:100%;text-align:center;margin-bottom:.8rem;">
+      📅 Book Appointment
+    </a>
+    <button onclick="document.getElementById('chatLimitOverlay').classList.remove('show')"
+      style="background:none;border:none;color:var(--text-muted);font-size:.82rem;cursor:pointer;font-family:inherit;">
+      Maybe later
+    </button>
+  </div>
+</div>
+<script src="chatbot-widget.js"></script>
+<script src="demo-builder.js"></script>
+
+</body>
+</html>

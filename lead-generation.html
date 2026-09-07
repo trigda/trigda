@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lead Generation — TRIGDA | Targeted B2B & B2C Prospecting</title>
+<meta name="description" content="Targeted lead generation and prospecting that fills your pipeline with the customers you actually want, not generic contact lists.">
+<meta name="keywords" content="lead generation agency Pakistan, B2B lead generation, B2C prospecting, sales pipeline growth">
+<link rel="canonical" href="https://trigda.online/lead-generation.html">
+<meta property="og:title" content="Lead Generation — TRIGDA | Targeted B2B & B2C Prospecting">
+<meta property="og:description" content="Targeted lead generation and prospecting that fills your pipeline with the customers you actually want, not generic contact lists.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Fix right scroll */
+* { box-sizing: border-box; }
+section { overflow-x: hidden; }
+
+.funnel-visual { display:flex; flex-direction:column; gap:0; align-items:center; margin:3rem 0; }
+.funnel-stage {
+  display:flex; align-items:center; gap:1.5rem; width:100%;
+  padding:1.2rem 2rem; border-radius:var(--r-md);
+  border:1px solid var(--border); background:var(--bg-card);
+  position:relative; transition:.3s; margin-bottom:2px;
+}
+.funnel-stage:hover { border-color:var(--border-hover); }
+.funnel-bar {
+  position:absolute; left:0; top:0; bottom:0;
+  background:linear-gradient(90deg,rgba(0,170,255,0.12),transparent);
+  border-radius:var(--r-md); transition:width .8s ease;
+}
+.funnel-label { font-weight:700; font-size:.95rem; position:relative;z-index:1; flex:1; }
+.funnel-pct { font-family:'Sora',sans-serif; font-weight:800; font-size:1.5rem; color:var(--accent-cyan); position:relative;z-index:1; }
+.funnel-sub { color:var(--text-muted); font-size:.78rem; position:relative;z-index:1; flex:2; }
+.funnel-num { color:var(--text-secondary); font-size:.82rem; position:relative;z-index:1; }
+.arrow-down { width:0; height:0; border-left:12px solid transparent; border-right:12px solid transparent; border-top:14px solid rgba(0,170,255,0.3); margin:2px 0; }
+
+.channel-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
+.channel-card { text-align:center; padding:1.8rem 1.2rem; }
+.channel-card .channel-icon { font-size:2rem; margin-bottom:1rem; display:block; }
+.channel-card h4 { font-size:.95rem; font-weight:700; margin-bottom:.4rem; }
+.channel-card p { font-size:.82rem; color:var(--text-secondary); }
+
+.results-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; }
+.result-row { display:flex; align-items:center; justify-content:space-between; padding:1rem; background:var(--bg-secondary); border-radius:var(--r-sm); border:1px solid var(--border); }
+.result-label { font-size:.88rem; color:var(--text-secondary); }
+.result-val { font-weight:700; color:var(--accent-cyan); font-size:1rem; }
+
+.steps-list { display:flex; flex-direction:column; gap:1.5rem; }
+.step-row { display:flex; gap:1.5rem; align-items:flex-start; }
+.step-circle { width:44px; height:44px; border-radius:50%; background:var(--accent-dim); border:2px solid var(--border-hover); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.9rem; color:var(--accent-cyan); flex-shrink:0; margin-top:2px; }
+.step-row h4 { font-size:1rem; font-weight:700; margin-bottom:.4rem; }
+.step-row p { font-size:.88rem; color:var(--text-secondary); line-height:1.6; }
+
+@media(max-width:900px){.channel-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.channel-grid{grid-template-columns:1fr 1fr;}.results-grid{grid-template-columns:1fr;}}
+
+@media(max-width:900px){
+  section > div > div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns:1fr !important;
+  }
+  .funnel-stage { flex-wrap:wrap; }
+  .funnel-pct { font-size:1.2rem; }
+}
+@media(max-width:768px){
+  .channel-grid { grid-template-columns:1fr 1fr !important; }
+  .results-grid { grid-template-columns:1fr !important; }
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">TRIGDA</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="ai-agent.html">AI Agent</a>
+    <a href="lead-generation.html" class="active">Lead Generation</a>
+    <a href="ai-automation.html">AI Automation</a>
+    <a href="web-development.html">Web Development</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-cta"><a href="free-demo.html" class="btn-primary btn-sm">Book Appointment</a></div>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="ai-agent.html">AI Agent</a>
+  <a href="lead-generation.html">Lead Generation</a><a href="ai-automation.html">AI Automation</a>
+  <a href="web-development.html">Web Development</a><a href="contact.html">Contact</a>
+  <a href="free-demo.html" class="btn-primary" style="text-align:center;margin-top:.5rem;">Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="glow-orb glow-cyan" style="width:500px;height:500px;top:-100px;left:50%;transform:translateX(-50%);opacity:.13;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="fade-up">
+      <div class="section-tag">🎯 Lead Generation</div>
+      <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.4rem);">Turn Strangers Into <span class="highlight">Paying Customers</span></h1>
+      <p class="section-sub">AI-powered lead generation that identifies, captures, qualifies, and nurtures high-intent prospects across every channel — automatically, at scale.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:2rem;">
+        <a href="free-demo.html" class="btn-primary btn-lg">Start Generating Leads</a>
+        <a href="#funnel" class="btn-outline btn-lg">See How It Works</a>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;margin-top:3rem;" class="fade-up">
+      <div style="text-align:center;"><div class="stat-value">$135</div><div class="stat-label">Avg. Premium Lead Value</div></div>
+      <div style="text-align:center;"><div class="stat-value">24.8%</div><div class="stat-label">Lead-to-Customer Rate</div></div>
+      <div style="text-align:center;"><div class="stat-value">60%</div><div class="stat-label">Lower Cost Per Acquisition</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHANNELS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="section-tag">📡 Multi-Channel</div>
+      <h2 class="section-title">Generate Leads from <span class="highlight">Every Channel</span></h2>
+      <p class="section-sub">TRIGDA captures and qualifies leads from all your traffic sources in one unified pipeline.</p>
+    </div>
+    <div class="channel-grid fade-up">
+      <div class="card channel-card">
+        <span class="channel-icon">🌐</span>
+        <h4>Website Chatbot</h4>
+        <p>Engage visitors in real-time and convert anonymous traffic into qualified leads instantly.</p>
+      </div>
+      <div class="card channel-card">
+        <span class="channel-icon">📧</span>
+        <h4>Email Campaigns</h4>
+        <p>Automated drip sequences that warm up cold leads and move them through your funnel.</p>
+      </div>
+      <div class="card channel-card">
+        <span class="channel-icon">📱</span>
+        <h4>SMS & WhatsApp</h4>
+        <p>Reach leads on mobile with personalized messages that get 98% open rates.</p>
+      </div>
+      <div class="card channel-card">
+        <span class="channel-icon">📲</span>
+        <h4>Social Media DMs</h4>
+        <p>Auto-respond to Instagram, Facebook, and LinkedIn messages to capture inbound leads.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNNEL -->
+<section id="funnel" class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;max-width:100%;overflow:hidden;">
+      <div class="fade-up">
+        <div class="section-tag">🔬 AI Qualification</div>
+        <h2 class="section-title">Smart <span class="highlight">Lead Funnel</span></h2>
+        <p class="section-sub" style="margin-bottom:2rem;">Our AI automatically qualifies every lead through a proven multi-stage funnel, so your sales team only speaks to people ready to buy.</p>
+        <div class="steps-list">
+          <div class="step-row">
+            <div class="step-circle">01</div>
+            <div><h4>Capture & Identify</h4><p>AI captures lead info from any channel and creates a unified profile in your CRM instantly.</p></div>
+          </div>
+          <div class="step-row">
+            <div class="step-circle">02</div>
+            <div><h4>Score & Qualify</h4><p>Each lead is scored based on budget, intent, timeline, and fit against your ideal customer profile.</p></div>
+          </div>
+          <div class="step-row">
+            <div class="step-circle">03</div>
+            <div><h4>Nurture & Educate</h4><p>Personalized content sequences move leads through the funnel automatically at the right pace.</p></div>
+          </div>
+          <div class="step-row">
+            <div class="step-circle">04</div>
+            <div><h4>Convert & Handoff</h4><p>High-intent leads are handed to your sales team with a full context summary — zero wasted time.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up">
+        <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.5rem;color:var(--text-secondary);">Live Pipeline Metrics</h3>
+        <div class="funnel-visual">
+          <div class="funnel-stage">
+            <div class="funnel-bar" style="width:100%;"></div>
+            <span class="funnel-pct">4,800</span>
+            <span class="funnel-label">Total Visitors</span>
+            <span class="funnel-sub">All traffic sources combined</span>
+          </div>
+          <div class="arrow-down"></div>
+          <div class="funnel-stage">
+            <div class="funnel-bar" style="width:72%;"></div>
+            <span class="funnel-pct">1,440</span>
+            <span class="funnel-label">Leads Captured</span>
+            <span class="funnel-sub">30% capture rate via AI chat</span>
+          </div>
+          <div class="arrow-down"></div>
+          <div class="funnel-stage">
+            <div class="funnel-bar" style="width:48%;"></div>
+            <span class="funnel-pct">648</span>
+            <span class="funnel-label">Qualified Prospects</span>
+            <span class="funnel-sub">45% qualification via AI scoring</span>
+          </div>
+          <div class="arrow-down"></div>
+          <div class="funnel-stage">
+            <div class="funnel-bar" style="width:28%;"></div>
+            <span class="funnel-pct">161</span>
+            <span class="funnel-label">Sales-Ready Leads</span>
+            <span class="funnel-sub">Booked meetings this month</span>
+          </div>
+          <div class="arrow-down"></div>
+          <div class="funnel-stage" style="border-color:var(--border-hover);">
+            <div class="funnel-bar" style="width:18%;background:linear-gradient(90deg,rgba(0,229,255,0.15),transparent);"></div>
+            <span class="funnel-pct" style="color:#00c864;">40</span>
+            <span class="funnel-label">Customers Won</span>
+            <span class="funnel-sub">24.8% close rate</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="section-tag">📊 Results</div>
+      <h2 class="section-title">Real <span class="highlight">Client Results</span></h2>
+    </div>
+    <div class="results-grid fade-up" style="max-width:900px;margin:0 auto;">
+      <div class="card">
+        <div class="stars" style="color:#f59e0b;font-size:.85rem;margin-bottom:.8rem;">★★★★★</div>
+        <p style="color:var(--text-secondary);font-size:.9rem;line-height:1.7;margin-bottom:1rem;">"We were getting 50 leads a month manually. With TRIGDA we now get 800+ qualified leads per month and our sales team focuses only on hot prospects."</p>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <div style="width:36px;height:36px;border-radius:50%;background:var(--btn-grad);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:#fff;">MR</div>
+          <div><div style="font-weight:700;font-size:.85rem;">Michael R.</div><div style="font-size:.75rem;color:var(--text-muted);">Head of Sales, TechVenture</div></div>
+          <div style="margin-left:auto;text-align:right;"><div class="stat-value" style="font-size:1.5rem;">16x</div><div style="font-size:.7rem;color:var(--text-muted);">More Leads</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="stars" style="color:#f59e0b;font-size:.85rem;margin-bottom:.8rem;">★★★★★</div>
+        <p style="color:var(--text-secondary);font-size:.9rem;line-height:1.7;margin-bottom:1rem;">"Our cost per lead dropped from $180 to just $42 in the first 60 days. The AI qualification is scary good — it knew which leads would close better than our veterans."</p>
+        <div style="display:flex;align-items:center;gap:.8rem;">
+          <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#6d28d9,#a78bfa);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;color:#fff;">JP</div>
+          <div><div style="font-weight:700;font-size:.85rem;">Jessica P.</div><div style="font-size:.75rem;color:var(--text-muted);">CMO, RealtyGroup</div></div>
+          <div style="margin-left:auto;text-align:right;"><div class="stat-value" style="font-size:1.5rem;">76%</div><div style="font-size:.7rem;color:var(--text-muted);">Cost Reduction</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="cta-box fade-up">
+      <h2 class="section-title">Ready to Fill Your <span class="highlight">Pipeline?</span></h2>
+      <p style="color:var(--text-secondary);max-width:500px;margin:1rem auto;">Start generating qualified leads in 48 hours. No setup fees. Cancel anytime.</p>
+      <div class="cta-btns">
+        <a href="free-demo.html" class="btn-primary btn-lg">Book Appointment</a>
+        <a href="services-overview.html" class="btn-outline btn-lg">See All Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">TRIGDA</div><p class="footer-desc">AI-powered lead generation & business automation platform.</p></div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="ai-agent.html">AI Agent</a></li><li><a href="lead-generation.html">Lead Generation</a></li><li><a href="ai-automation.html">AI Automation</a></li><li><a href="web-development.html">Web Development</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 TRIGDA. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('navbar').style.background=window.scrollY>50?'rgba(6,6,14,0.98)':'rgba(6,6,14,0.85)';});
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+<!-- Floating AI Chat Widget -->
+<button class="chat-widget-launcher" id="chatWidgetLauncher" aria-label="Open TRIGDA AI Assistant" aria-expanded="false">💬</button>
+<div class="chat-widget-panel" id="chatWidgetPanel">
+  <div class="chat-widget-header">
+    <div>
+      <div class="chat-widget-header-title">TRIGDA AI Assistant</div>
+      <div class="chat-widget-header-sub"><span style="width:6px;height:6px;background:#00c864;border-radius:50%;display:inline-block;box-shadow:0 0 6px #00c864;"></span> Online — powered by Gemini</div>
+    </div>
+    <button class="chat-widget-close" id="chatWidgetClose" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-widget-body">
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg">
+        <div class="chat-avatar ai">AI</div>
+        <div class="chat-bubble ai-bubble">Hey! 👋 I'm TRIGDA's intelligent assistant. Ask me anything about our services, process, or booking an appointment!</div>
+      </div>
+    </div>
+    <div class="chat-msg typing-indicator" id="typingIndicator">
+      <div class="chat-avatar ai">AI</div>
+      <div class="chat-bubble ai-bubble"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="chat-widget-footer">
+    <div class="chat-msg-counter">Messages used: <span id="msgCount">0</span>/10</div>
+    <div class="chat-bar">
+      <input class="chat-input-field" id="chatInput" placeholder="Ask about services, process..." onkeydown="if(event.key==='Enter')sendMessage()">
+      <button class="btn-primary btn-sm" onclick="sendMessage()" id="sendBtn">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHAT LIMIT POPUP -->
+<div class="chat-limit-overlay" id="chatLimitOverlay">
+  <div class="chat-limit-box">
+    <span class="limit-icon">🚀</span>
+    <h3>Free Message Limit Reached!</h3>
+    <p>You've used your 10 free messages. Your limit will reset in <strong id="timeLeftDisplay" style="color:var(--accent-cyan);">12h 0m</strong>. Or book a free appointment to get personalized answers from our team!</p>
+    <a href="free-demo.html" class="btn-primary btn-lg" style="display:block;width:100%;text-align:center;margin-bottom:.8rem;">
+      📅 Book Appointment
+    </a>
+    <button onclick="document.getElementById('chatLimitOverlay').classList.remove('show')"
+      style="background:none;border:none;color:var(--text-muted);font-size:.82rem;cursor:pointer;font-family:inherit;">
+      Maybe later
+    </button>
+  </div>
+</div>
+<script src="chatbot-widget.js"></script>
+
+</body>
+</html>

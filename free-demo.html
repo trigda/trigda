@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Appointment — TRIGDA | Free 30-Minute Consultation</title>
+<meta name="description" content="Book a free 30-minute appointment with TRIGDA to discuss your website, lead generation, or automation project — no obligation.">
+<meta name="keywords" content="book free consultation, free strategy call, TRIGDA appointment booking">
+<link rel="canonical" href="https://trigda.online/free-demo.html">
+<meta property="og:title" content="Book Appointment — TRIGDA | Free 30-Minute Consultation">
+<meta property="og:description" content="Book a free 30-minute appointment with TRIGDA to discuss your website, lead generation, or automation project — no obligation.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+.demo-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:start; }
+.demo-form-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--r-xl); padding:2.5rem; }
+.demo-form-card h2 { font-size:1.5rem; font-weight:800; margin-bottom:.5rem; }
+.demo-form-card p { color:var(--text-secondary); font-size:.9rem; margin-bottom:2rem; }
+
+.demo-benefits { display:flex; flex-direction:column; gap:1.5rem; }
+.benefit-row { display:flex; align-items:flex-start; gap:1.2rem; }
+.benefit-icon { width:44px; height:44px; border-radius:var(--r-md); background:var(--accent-dim); border:1px solid var(--border-hover); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+.benefit-row h4 { font-weight:700; font-size:.95rem; margin-bottom:.3rem; }
+.benefit-row p { font-size:.84rem; color:var(--text-secondary); line-height:1.6; }
+
+.time-slots { display:grid; grid-template-columns:repeat(3,1fr); gap:.6rem; margin-top:.5rem; }
+.time-slot { padding:.55rem .5rem; background:var(--bg-secondary); border:1.5px solid var(--border); border-radius:var(--r-sm); text-align:center; font-size:.8rem; cursor:pointer; transition:.2s; font-weight:500; }
+.time-slot:hover { border-color:var(--accent); color:var(--accent); }
+.time-slot.selected { border-color:var(--accent); background:var(--accent-dim); color:var(--accent-cyan); }
+
+.success-box { text-align:center; padding:3rem 2rem; display:none; }
+.success-box .check { font-size:3.5rem; margin-bottom:1rem; }
+.success-box h3 { font-size:1.4rem; font-weight:800; margin-bottom:.7rem; }
+.success-box p { color:var(--text-secondary); font-size:.95rem; }
+
+.trust-badges { display:flex; flex-wrap:wrap; gap:1rem; margin-top:2.5rem; }
+.trust-badge { display:flex; align-items:center; gap:.5rem; font-size:.78rem; color:var(--text-muted); }
+.trust-badge::before { content:'✓'; color:var(--accent-cyan); font-weight:700; }
+
+@media(max-width:900px){ .demo-grid{grid-template-columns:1fr;} .time-slots{grid-template-columns:repeat(4,1fr);} }
+@media(max-width:480px){ .time-slots{grid-template-columns:repeat(3,1fr);} }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">TRIGDA</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="ai-agent.html">AI Agent</a>
+    <a href="lead-generation.html">Lead Generation</a>
+    <a href="ai-automation.html">AI Automation</a>
+    <a href="web-development.html">Web Development</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-cta"><a href="free-demo.html" class="btn-primary btn-sm">Book Appointment</a></div>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="ai-agent.html">AI Agent</a>
+  <a href="lead-generation.html">Lead Generation</a><a href="ai-automation.html">AI Automation</a>
+  <a href="web-development.html">Web Development</a><a href="contact.html">Contact</a>
+  <a href="free-demo.html" class="btn-primary" style="text-align:center;margin-top:.5rem;">Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section style="padding:calc(var(--nav-h) + 60px) 5% 60px; text-align:center; position:relative; overflow:hidden; background:radial-gradient(ellipse 80% 50% at 50% -10%, rgba(0,130,255,0.2),transparent);">
+  <div class="glow-orb glow-blue" style="width:400px;height:400px;top:-100px;left:50%;transform:translateX(-50%);opacity:.12;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="fade-up">
+      <div class="section-tag" style="margin:0 auto 1.2rem;">🎯 Free Demo</div>
+      <h1 class="section-title" style="font-size:clamp(2rem,5vw,3rem);">Book Your <span class="highlight">Free Strategy Demo</span></h1>
+      <p style="color:var(--text-secondary);max-width:560px;margin:.8rem auto;font-size:1rem;">See exactly how TRIGDA will grow your business. Our specialists will build you a custom automation plan — 100% free, no strings attached.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="section" style="padding-top:40px;">
+  <div class="container">
+    <div class="demo-grid">
+      <!-- LEFT: BENEFITS -->
+      <div class="fade-up">
+        <div class="section-tag">✅ What You'll Get</div>
+        <h2 class="section-title" style="font-size:1.8rem;margin-bottom:1.5rem;">Your 30-Minute <span class="highlight">Growth Session</span></h2>
+        <div class="demo-benefits">
+          <div class="benefit-row">
+            <div class="benefit-icon">🔍</div>
+            <div>
+              <h4>Business Audit</h4>
+              <p>We'll analyze your current sales process and identify the top 3 automation opportunities with the highest ROI for your specific business.</p>
+            </div>
+          </div>
+          <div class="benefit-row">
+            <div class="benefit-icon">🗺️</div>
+            <div>
+              <h4>Custom Automation Blueprint</h4>
+              <p>You'll leave with a personalized automation roadmap showing exactly which workflows to build first and the expected revenue impact.</p>
+            </div>
+          </div>
+          <div class="benefit-row">
+            <div class="benefit-icon">🤖</div>
+            <div>
+              <h4>Live AI Demo</h4>
+              <p>See the AI agent, lead qualification, and automation tools in action — customized to your industry and use case in real time.</p>
+            </div>
+          </div>
+          <div class="benefit-row">
+            <div class="benefit-icon">💰</div>
+            <div>
+              <h4>ROI Calculator</h4>
+              <p>We'll run the numbers and show you exactly how much time and money TRIGDA will save your team in the first 90 days.</p>
+            </div>
+          </div>
+          <div class="benefit-row">
+            <div class="benefit-icon">🎁</div>
+            <div>
+              <h4>14-Day Free Trial</h4>
+              <p>Book a demo and get full platform access free for 14 days — no credit card required, cancel anytime.</p>
+            </div>
+          </div>
+        </div>
+        <div class="trust-badges">
+          <div class="trust-badge">No credit card needed</div>
+          <div class="trust-badge">No sales pressure</div>
+          <div class="trust-badge">30-minute session</div>
+          <div class="trust-badge">Cancel anytime</div>
+        </div>
+        <!-- Social proof -->
+        <div class="card" style="margin-top:2.5rem;padding:1.5rem;">
+          <div class="stars" style="color:#f59e0b;font-size:.85rem;margin-bottom:.7rem;">★★★★★</div>
+          <p style="color:var(--text-secondary);font-size:.88rem;line-height:1.65;">"The demo alone was worth it. They showed me 5 automations I could implement that week. Within 30 days we'd saved 22 hours of manual work per employee."</p>
+          <div style="display:flex;align-items:center;gap:.8rem;margin-top:1rem;">
+            <div style="width:34px;height:34px;border-radius:50%;background:var(--btn-grad);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.75rem;color:#fff;">AK</div>
+            <div><div style="font-weight:700;font-size:.85rem;">Ali Khan</div><div style="font-size:.75rem;color:var(--text-muted);">Operations Director, FinancePro</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="fade-up">
+        <div class="demo-form-card">
+          <div id="formSection">
+            <h2>Book Your Free Demo</h2>
+            <p>Takes less than 2 minutes to schedule</p>
+
+            <!-- Date Selection -->
+            <div class="form-group">
+              <label class="form-label">Select a Date *</label>
+              <input type="date" class="form-input" id="demoDate" min="">
+            </div>
+
+            <!-- Time Slots -->
+            <div class="form-group">
+              <label class="form-label">Choose a Time Slot *</label>
+              <div class="time-slots">
+                <div class="time-slot" onclick="selectTime(this)">9:00 AM</div>
+                <div class="time-slot" onclick="selectTime(this)">10:00 AM</div>
+                <div class="time-slot" onclick="selectTime(this)">11:00 AM</div>
+                <div class="time-slot" onclick="selectTime(this)">12:00 PM</div>
+                <div class="time-slot" onclick="selectTime(this)">2:00 PM</div>
+                <div class="time-slot" onclick="selectTime(this)">3:00 PM</div>
+                <div class="time-slot" onclick="selectTime(this)">4:00 PM</div>
+                <div class="time-slot" onclick="selectTime(this)">5:00 PM</div>
+                <div class="time-slot" onclick="selectTime(this)">6:00 PM</div>
+              </div>
+              <input type="hidden" id="selectedTime" value="">
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">First Name *</label>
+                <input type="text" class="form-input" id="firstName" placeholder="Ahmed">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Last Name *</label>
+                <input type="text" class="form-input" id="lastName" placeholder="Khan">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Work Email *</label>
+              <input type="email" class="form-input" id="demoEmail" placeholder="ahmed@company.com">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Phone Number *</label>
+              <input type="tel" class="form-input" id="demoPhone" placeholder="+92 300 1234567">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Company Name *</label>
+              <input type="text" class="form-input" id="companyName" placeholder="Your Company">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Company Size</label>
+              <select class="form-select" id="companySize">
+                <option value="">Select size</option>
+                <option>1–5 employees</option>
+                <option>6–20 employees</option>
+                <option>21–100 employees</option>
+                <option>100+ employees</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">What's your biggest challenge?</label>
+              <select class="form-select" id="challenge">
+                <option value="">Select challenge</option>
+                <option>Not enough leads</option>
+                <option>Poor lead follow-up</option>
+                <option>Low conversion rates</option>
+                <option>Manual repetitive tasks</option>
+                <option>Scaling my sales team</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div id="demoStatus" class="form-status"></div>
+
+            <button class="btn-primary" style="width:100%;margin-top:.5rem;padding:1rem;font-size:1rem;" onclick="bookDemo()">
+              🚀 Book My Free Demo
+            </button>
+            <p style="text-align:center;font-size:.75rem;color:var(--text-muted);margin-top:.8rem;">By booking, you agree to our <a href="#" style="color:var(--accent);">Terms</a> and <a href="#" style="color:var(--accent);">Privacy Policy</a>.</p>
+          </div>
+
+          <!-- SUCCESS STATE -->
+          <div class="success-box" id="successBox">
+            <div class="check">🎉</div>
+            <h3>Demo Booked Successfully!</h3>
+            <p>We've sent a confirmation to your email. A TRIGDA specialist will join you at your chosen time.</p>
+            <div style="margin-top:1.5rem;padding:1rem;background:var(--accent-dim);border-radius:var(--r-md);border:1px solid var(--border);">
+              <p style="font-size:.85rem;color:var(--accent-cyan);font-weight:600;">📧 Check your inbox for the calendar invite + Zoom link.</p>
+            </div>
+            <a href="index.html" class="btn-outline btn-sm" style="margin-top:1.5rem;display:inline-block;">← Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">TRIGDA</div><p class="footer-desc">The AI-powered growth platform that puts your business on autopilot.</p></div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="ai-agent.html">AI Agent</a></li><li><a href="lead-generation.html">Lead Generation</a></li><li><a href="ai-automation.html">AI Automation</a></li><li><a href="web-development.html">Web Development</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 TRIGDA. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('navbar').style.background=window.scrollY>50?'rgba(6,6,14,0.98)':'rgba(6,6,14,0.85)';});
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+// Set min date to today
+const today = new Date().toISOString().split('T')[0];
+document.getElementById('demoDate').min = today;
+document.getElementById('demoDate').value = today;
+
+function selectTime(el) {
+  document.querySelectorAll('.time-slot').forEach(s=>s.classList.remove('selected'));
+  el.classList.add('selected');
+  document.getElementById('selectedTime').value = el.textContent;
+}
+
+/* EmailJS — sends the appointment request straight to your inbox, no server/database needed */
+const EMAILJS_PUBLIC_KEY = '07ZimMEY4-Z9_iSj1';
+const EMAILJS_SERVICE_ID = 'service_jxbljeq';
+const EMAILJS_TEMPLATE_ID = 'template_5mmj38r';           // owner notification
+const EMAILJS_AUTOREPLY_TEMPLATE_ID = 'template_w11ji1u'; // visitor auto-reply
+if (window.emailjs) emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+async function bookDemo() {
+  const statusEl = document.getElementById('demoStatus');
+  const data = {
+    firstName: document.getElementById('firstName').value.trim(),
+    lastName: document.getElementById('lastName').value.trim(),
+    email: document.getElementById('demoEmail').value.trim(),
+    phone: document.getElementById('demoPhone').value.trim(),
+    company: document.getElementById('companyName').value.trim(),
+    companySize: document.getElementById('companySize').value,
+    challenge: document.getElementById('challenge').value,
+    date: document.getElementById('demoDate').value,
+    time: document.getElementById('selectedTime').value
+  };
+  if (!data.firstName || !data.lastName || !data.email || !data.phone || !data.company) {
+    statusEl.className = 'form-status error';
+    statusEl.textContent = '⚠️ Please fill in all required fields.';
+    return;
+  }
+  if (!data.email.includes('@')) {
+    statusEl.className = 'form-status error';
+    statusEl.textContent = '⚠️ Please enter a valid email address.';
+    return;
+  }
+  if (!data.time) {
+    statusEl.className = 'form-status error';
+    statusEl.textContent = '⚠️ Please select a time slot.';
+    return;
+  }
+  const btn = event.target;
+  btn.textContent = 'Booking...'; btn.disabled = true;
+
+  const templateParams = {
+    full_name: data.firstName + ' ' + data.lastName,
+    email: data.email,
+    phone: data.phone,
+    company_name: data.company + (data.companySize ? ' (' + data.companySize + ')' : ''),
+    service: 'Free Appointment Request',
+    appointment_date: data.date,
+    appointment_time: data.time,
+    budget_context: 'Not provided',
+    issue_details: data.challenge || 'Not specified'
+  };
+
+  try {
+    const sendTasks = [emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)];
+    sendTasks.push(
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_AUTOREPLY_TEMPLATE_ID, templateParams)
+        .catch(err => console.error('EmailJS auto-reply error:', err))
+    );
+    await Promise.all(sendTasks);
+    document.getElementById('formSection').style.display = 'none';
+    document.getElementById('successBox').style.display = 'block';
+  } catch (err) {
+    console.error('EmailJS error:', err);
+    statusEl.className = 'form-status error';
+    statusEl.textContent = '⚠️ Something went wrong booking your appointment. Please try again, or email us directly at talhabinsaeed36@gmail.com.';
+    btn.textContent = '📅 Book Appointment'; btn.disabled = false;
+  }
+}
+</script>
+<!-- Floating AI Chat Widget -->
+<button class="chat-widget-launcher" id="chatWidgetLauncher" aria-label="Open TRIGDA AI Assistant" aria-expanded="false">💬</button>
+<div class="chat-widget-panel" id="chatWidgetPanel">
+  <div class="chat-widget-header">
+    <div>
+      <div class="chat-widget-header-title">TRIGDA AI Assistant</div>
+      <div class="chat-widget-header-sub"><span style="width:6px;height:6px;background:#00c864;border-radius:50%;display:inline-block;box-shadow:0 0 6px #00c864;"></span> Online — powered by Gemini</div>
+    </div>
+    <button class="chat-widget-close" id="chatWidgetClose" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-widget-body">
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg">
+        <div class="chat-avatar ai">AI</div>
+        <div class="chat-bubble ai-bubble">Hey! 👋 I'm TRIGDA's intelligent assistant. Ask me anything about our services, process, or booking an appointment!</div>
+      </div>
+    </div>
+    <div class="chat-msg typing-indicator" id="typingIndicator">
+      <div class="chat-avatar ai">AI</div>
+      <div class="chat-bubble ai-bubble"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="chat-widget-footer">
+    <div class="chat-msg-counter">Messages used: <span id="msgCount">0</span>/10</div>
+    <div class="chat-bar">
+      <input class="chat-input-field" id="chatInput" placeholder="Ask about services, process..." onkeydown="if(event.key==='Enter')sendMessage()">
+      <button class="btn-primary btn-sm" onclick="sendMessage()" id="sendBtn">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHAT LIMIT POPUP -->
+<div class="chat-limit-overlay" id="chatLimitOverlay">
+  <div class="chat-limit-box">
+    <span class="limit-icon">🚀</span>
+    <h3>Free Message Limit Reached!</h3>
+    <p>You've used your 10 free messages. Your limit will reset in <strong id="timeLeftDisplay" style="color:var(--accent-cyan);">12h 0m</strong>. Or book a free appointment to get personalized answers from our team!</p>
+    <a href="free-demo.html" class="btn-primary btn-lg" style="display:block;width:100%;text-align:center;margin-bottom:.8rem;">
+      📅 Book Appointment
+    </a>
+    <button onclick="document.getElementById('chatLimitOverlay').classList.remove('show')"
+      style="background:none;border:none;color:var(--text-muted);font-size:.82rem;cursor:pointer;font-family:inherit;">
+      Maybe later
+    </button>
+  </div>
+</div>
+<script src="chatbot-widget.js"></script>
+
+</body>
+</html>

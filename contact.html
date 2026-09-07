@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact TRIGDA | Websites, Leads & AI Automation</title>
+<meta name="description" content="Reach TRIGDA by phone, email, or book a free appointment. We typically respond within 4 hours.">
+<meta name="keywords" content="contact TRIGDA, TRIGDA Gujranwala contact, web development inquiry Pakistan">
+<link rel="canonical" href="https://trigda.online/contact.html">
+<meta property="og:title" content="Contact TRIGDA | Websites, Leads & AI Automation">
+<meta property="og:description" content="Reach TRIGDA by phone, email, or book a free appointment. We typically respond within 4 hours.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+.contact-grid { display:grid; grid-template-columns:1fr 1.6fr; gap:4rem; align-items:start; }
+.contact-info { display:flex; flex-direction:column; gap:1.5rem; }
+.contact-item { display:flex; align-items:flex-start; gap:1rem; padding:1.3rem; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--r-md); transition:.2s; }
+.contact-item:hover { border-color:var(--border-hover); }
+.contact-item-icon { width:44px; height:44px; border-radius:var(--r-sm); background:var(--accent-dim); border:1px solid var(--border-hover); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
+.contact-item h4 { font-size:.9rem; font-weight:700; margin-bottom:.25rem; }
+.contact-item p, .contact-item a { font-size:.85rem; color:var(--text-secondary); line-height:1.5; }
+.contact-item a:hover { color:var(--accent-cyan); }
+.contact-form-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--r-xl); padding:2.5rem; }
+.contact-form-card h2 { font-size:1.4rem; font-weight:800; margin-bottom:.4rem; }
+.contact-form-card > p { color:var(--text-secondary); font-size:.9rem; margin-bottom:2rem; }
+.success-msg { text-align:center; padding:3rem 1rem; display:none; }
+.success-msg .icon { font-size:3rem; margin-bottom:1rem; }
+.success-msg h3 { font-size:1.3rem; font-weight:800; margin-bottom:.5rem; }
+.success-msg p { color:var(--text-secondary); font-size:.9rem; }
+@media(max-width:900px){ .contact-grid{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">TRIGDA</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="ai-agent.html">AI Agent</a>
+    <a href="lead-generation.html">Lead Generation</a>
+    <a href="ai-automation.html">AI Automation</a>
+    <a href="web-development.html">Web Development</a>
+    <a href="contact.html" class="active">Contact</a>
+  </div>
+  <div class="nav-cta"><a href="free-demo.html" class="btn-primary btn-sm">Book Appointment</a></div>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="ai-agent.html">AI Agent</a>
+  <a href="lead-generation.html">Lead Generation</a><a href="ai-automation.html">AI Automation</a>
+  <a href="web-development.html">Web Development</a><a href="contact.html">Contact</a>
+  <a href="free-demo.html" class="btn-primary" style="text-align:center;margin-top:.5rem;">Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="glow-orb glow-blue" style="width:400px;height:400px;top:-100px;left:50%;transform:translateX(-50%);opacity:.13;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="fade-up">
+      <div class="section-tag" style="margin:0 auto 1.2rem;">📬 Contact Us</div>
+      <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.2rem);">Let's <span class="highlight">Talk Growth</span></h1>
+      <p class="section-sub">Have a question, need a custom solution, or want to explore enterprise options? Our team is here to help.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN -->
+<section class="section" style="padding-top:50px;">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- LEFT: INFO -->
+      <div class="fade-up">
+        <div class="section-tag">📞 Get in Touch</div>
+        <h2 class="section-title" style="font-size:1.7rem;margin-bottom:1.5rem;">We're Here to <span class="highlight">Help</span></h2>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-item-icon">📧</div>
+            <div>
+              <h4>Email Us</h4>
+              <a href="mailto:hello@trigda">hello@trigda</a>
+              <p>We reply within 4 business hours.</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">💬</div>
+            <div>
+              <h4>Live Chat</h4>
+              <p>Chat with our AI or a human expert directly on the platform — available 24/7.</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <h4>Sales & Enterprise</h4>
+              <a href="tel:+923126154283">+92 312 615 4283</a>
+              <p>Mon–Fri, 9am–6pm PKT</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🗺️</div>
+            <div>
+              <h4>Headquarters</h4>
+              <p>Gujranwala, Punjab, Pakistan<br>International operations worldwide</p>
+              <a href="https://share.google/0OMDOidrg7v8e7rgh" target="_blank" style="color:var(--accent-cyan);font-size:.82rem;font-weight:600;margin-top:.4rem;display:inline-block;">📍 View on Google Maps →</a>
+            </div>
+          </div>
+          <!-- Google Maps Embed -->
+          <div style="border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);margin-top:.5rem;">
+            <iframe 
+              src="https://maps.google.com/maps?q=Gujranwala,Punjab,Pakistan&output=embed&z=13"
+              width="100%" height="220" style="border:0;display:block;filter:invert(90%) hue-rotate(180deg);" 
+              allowfullscreen="" loading="lazy">
+            </iframe>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📅</div>
+            <div>
+              <h4>Book a Demo Call</h4>
+              <p>Prefer a scheduled call? <a href="free-demo.html" style="color:var(--accent-cyan);font-weight:600;">Book a free 30-min demo</a> with our team.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Response Time -->
+        <div style="margin-top:2rem;padding:1.3rem;background:var(--accent-dim);border-radius:var(--r-md);border:1px solid var(--border-hover);">
+          <p style="font-size:.85rem;color:var(--accent-cyan);font-weight:600;">⚡ Average response time: 4 hours</p>
+          <p style="font-size:.8rem;color:var(--text-secondary);margin-top:.3rem;">For urgent enterprise inquiries, please call us directly or use the priority flag in the form.</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: FORM -->
+      <div class="contact-form-card fade-up">
+        <div id="contactFormWrap">
+          <h2>Send Us a Message</h2>
+          <p>Fill in the form below and we'll get back to you within 4 hours.</p>
+
+          <div class="form-grid">
+            <div class="form-group">
+              <label class="form-label">First Name *</label>
+              <input type="text" class="form-input" id="cfName" placeholder="Ahmed">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Last Name *</label>
+              <input type="text" class="form-input" id="cfLast" placeholder="Khan">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address *</label>
+            <input type="email" class="form-input" id="cfEmail" placeholder="ahmed@company.com">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-input" id="cfPhone" placeholder="+92 300 1234567">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Company Name</label>
+            <input type="text" class="form-input" id="cfCompany" placeholder="Your Company Ltd.">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">What can we help you with? *</label>
+            <select class="form-select" id="cfTopic">
+              <option value="">Select a topic</option>
+              <option>General Inquiry</option>
+              <option>Sales & Pricing</option>
+              <option>Enterprise Solutions</option>
+              <option>Technical Support</option>
+              <option>Partnership</option>
+              <option>Demo Request</option>
+              <option>Billing</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Message *</label>
+            <textarea class="form-textarea" id="cfMessage" placeholder="Tell us about your business and what you're looking to achieve with TRIGDA..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label style="display:flex;align-items:center;gap:.6rem;cursor:pointer;font-size:.85rem;color:var(--text-secondary);">
+              <input type="checkbox" id="cfUrgent" style="width:16px;height:16px;accent-color:var(--accent);">
+              Mark as urgent — I need a response within 2 hours
+            </label>
+          </div>
+
+          <div id="contactStatus" class="form-status"></div>
+
+          <button class="btn-primary" style="width:100%;padding:1rem;font-size:1rem;" onclick="sendContact()">
+            📨 Send Message
+          </button>
+          <p style="text-align:center;font-size:.75rem;color:var(--text-muted);margin-top:.8rem;">We respect your privacy. Your data will never be shared with third parties.</p>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="success-msg" id="contactSuccess">
+          <div class="icon">✅</div>
+          <h3>Message Sent!</h3>
+          <p>Thank you for reaching out. Our team will get back to you within 4 hours at the email you provided.</p>
+          <a href="index.html" class="btn-outline btn-sm" style="margin-top:1.5rem;display:inline-block;">← Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK LINKS CTA -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:2.5rem;">
+      <h2 class="section-title">Looking for <span class="highlight">Something Specific?</span></h2>
+    </div>
+    <div class="grid-3 fade-up">
+      <a href="free-demo.html" class="card" style="text-align:center;padding:2rem;display:block;">
+        <div style="font-size:2rem;margin-bottom:1rem;">🎯</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">Book a Free Demo</h3>
+        <p style="font-size:.85rem;color:var(--text-secondary);">See TRIGDA in action with a personalized 30-minute demo session.</p>
+      </a>
+      <a href="services-overview.html" class="card" style="text-align:center;padding:2rem;display:block;">
+        <div style="font-size:2rem;margin-bottom:1rem;">🧩</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">View All Services</h3>
+        <p style="font-size:.85rem;color:var(--text-secondary);">See everything TRIGDA offers, from websites to AI automation.</p>
+      </a>
+      <a href="ai-agent.html" class="card" style="text-align:center;padding:2rem;display:block;">
+        <div style="font-size:2rem;margin-bottom:1rem;">🤖</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">Explore Features</h3>
+        <p style="font-size:.85rem;color:var(--text-secondary);">Discover all the AI tools available to grow your business.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">TRIGDA</div><p class="footer-desc">The AI-powered growth platform that puts your business on autopilot.</p>
+        <div class="social-links" style="margin-top:1.5rem;">
+          <a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">fb</a>
+        </div>
+      </div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="ai-agent.html">AI Agent</a></li><li><a href="lead-generation.html">Lead Generation</a></li><li><a href="ai-automation.html">AI Automation</a></li><li><a href="web-development.html">Web Development</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 TRIGDA. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('navbar').style.background=window.scrollY>50?'rgba(6,6,14,0.98)':'rgba(6,6,14,0.85)';});
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+
+/* EmailJS — sends the contact form straight to your inbox, no server/database needed */
+const EMAILJS_PUBLIC_KEY = '07ZimMEY4-Z9_iSj1';
+const EMAILJS_SERVICE_ID = 'service_jxbljeq';
+const EMAILJS_TEMPLATE_ID = 'template_5mmj38r';           // owner notification
+const EMAILJS_AUTOREPLY_TEMPLATE_ID = 'template_w11ji1u'; // visitor auto-reply
+if (window.emailjs) emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+async function sendContact() {
+  const statusEl = document.getElementById('contactStatus');
+  const data = {
+    name: document.getElementById('cfName').value.trim() + ' ' + document.getElementById('cfLast').value.trim(),
+    email: document.getElementById('cfEmail').value.trim(),
+    phone: document.getElementById('cfPhone').value.trim(),
+    company: document.getElementById('cfCompany').value.trim(),
+    topic: document.getElementById('cfTopic').value,
+    message: document.getElementById('cfMessage').value.trim(),
+    urgent: document.getElementById('cfUrgent').checked
+  };
+  if (!data.name.trim() || !data.email || !data.message || !data.topic) {
+    statusEl.className = 'form-status error'; statusEl.textContent = '⚠️ Please fill in all required fields.'; return;
+  }
+  if (!data.email.includes('@')) { statusEl.className = 'form-status error'; statusEl.textContent = '⚠️ Invalid email address.'; return; }
+  const btn = event.target; btn.textContent = 'Sending...'; btn.disabled = true;
+
+  const templateParams = {
+    full_name: data.name,
+    email: data.email,
+    phone: data.phone || 'Not provided',
+    company_name: data.company || 'Not provided',
+    service: data.topic,
+    appointment_date: 'N/A (contact form)',
+    appointment_time: 'N/A',
+    budget_context: data.urgent ? 'URGENT — respond within 2 hours' : 'Standard',
+    issue_details: data.message
+  };
+
+  try {
+    const sendTasks = [emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)];
+    sendTasks.push(
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_AUTOREPLY_TEMPLATE_ID, templateParams)
+        .catch(err => console.error('EmailJS auto-reply error:', err))
+    );
+    await Promise.all(sendTasks);
+    document.getElementById('contactFormWrap').style.display='none';
+    document.getElementById('contactSuccess').style.display='block';
+  } catch (err) {
+    console.error('EmailJS error:', err);
+    statusEl.className = 'form-status error';
+    statusEl.textContent = '⚠️ Something went wrong sending your message. Please try again, or email us directly at talhabinsaeed36@gmail.com.';
+    btn.textContent = '📨 Send Message'; btn.disabled = false;
+  }
+}
+</script>
+<!-- Floating AI Chat Widget -->
+<button class="chat-widget-launcher" id="chatWidgetLauncher" aria-label="Open TRIGDA AI Assistant" aria-expanded="false">💬</button>
+<div class="chat-widget-panel" id="chatWidgetPanel">
+  <div class="chat-widget-header">
+    <div>
+      <div class="chat-widget-header-title">TRIGDA AI Assistant</div>
+      <div class="chat-widget-header-sub"><span style="width:6px;height:6px;background:#00c864;border-radius:50%;display:inline-block;box-shadow:0 0 6px #00c864;"></span> Online — powered by Gemini</div>
+    </div>
+    <button class="chat-widget-close" id="chatWidgetClose" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-widget-body">
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg">
+        <div class="chat-avatar ai">AI</div>
+        <div class="chat-bubble ai-bubble">Hey! 👋 I'm TRIGDA's intelligent assistant. Ask me anything about our services, process, or booking an appointment!</div>
+      </div>
+    </div>
+    <div class="chat-msg typing-indicator" id="typingIndicator">
+      <div class="chat-avatar ai">AI</div>
+      <div class="chat-bubble ai-bubble"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="chat-widget-footer">
+    <div class="chat-msg-counter">Messages used: <span id="msgCount">0</span>/10</div>
+    <div class="chat-bar">
+      <input class="chat-input-field" id="chatInput" placeholder="Ask about services, process..." onkeydown="if(event.key==='Enter')sendMessage()">
+      <button class="btn-primary btn-sm" onclick="sendMessage()" id="sendBtn">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHAT LIMIT POPUP -->
+<div class="chat-limit-overlay" id="chatLimitOverlay">
+  <div class="chat-limit-box">
+    <span class="limit-icon">🚀</span>
+    <h3>Free Message Limit Reached!</h3>
+    <p>You've used your 10 free messages. Your limit will reset in <strong id="timeLeftDisplay" style="color:var(--accent-cyan);">12h 0m</strong>. Or book a free appointment to get personalized answers from our team!</p>
+    <a href="free-demo.html" class="btn-primary btn-lg" style="display:block;width:100%;text-align:center;margin-bottom:.8rem;">
+      📅 Book Appointment
+    </a>
+    <button onclick="document.getElementById('chatLimitOverlay').classList.remove('show')"
+      style="background:none;border:none;color:var(--text-muted);font-size:.82rem;cursor:pointer;font-family:inherit;">
+      Maybe later
+    </button>
+  </div>
+</div>
+<script src="chatbot-widget.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /setup-sheets.html
+
+Sitemap: https://trigda.online/sitemap.xml

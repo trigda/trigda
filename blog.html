@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — TRIGDA | AI Automation & Growth Insights</title>
+<meta name="description" content="Strategies, guides, and insights on AI automation, lead generation, and growing your business.">
+<meta name="keywords" content="AI automation blog, lead generation tips, business automation guides">
+<link rel="canonical" href="https://trigda.online/blog.html">
+<meta property="og:title" content="Blog — TRIGDA | AI Automation & Growth Insights">
+<meta property="og:description" content="Strategies, guides, and insights on AI automation, lead generation, and growing your business.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+.blog-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; margin-top:3rem; }
+.blog-card { display:block; text-decoration:none; color:inherit; }
+.blog-thumb { width:100%; height:180px; border-radius:var(--r-md); background:linear-gradient(135deg,var(--bg-secondary),var(--bg-card)); margin-bottom:1.2rem; display:flex; align-items:center; justify-content:center; font-size:3rem; overflow:hidden; border:1px solid var(--border); }
+.blog-tag { font-size:.72rem; font-weight:700; color:var(--accent-cyan); text-transform:uppercase; letter-spacing:1px; margin-bottom:.6rem; }
+.blog-card h3 { font-size:1.05rem; font-weight:700; margin-bottom:.6rem; line-height:1.4; transition:color .2s; }
+.blog-card:hover h3 { color:var(--accent-cyan); }
+.blog-card p { font-size:.85rem; color:var(--text-secondary); line-height:1.65; margin-bottom:1rem; }
+.blog-meta { font-size:.78rem; color:var(--text-muted); display:flex; align-items:center; gap:.8rem; }
+.blog-meta span { display:flex; align-items:center; gap:.3rem; }
+.categories { display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:3rem; }
+.cat-btn { padding:.45rem 1.1rem; border-radius:var(--r-xl); border:1.5px solid var(--border); background:transparent; color:var(--text-secondary); font-size:.82rem; font-weight:600; cursor:pointer; transition:.2s; font-family:inherit; }
+.cat-btn:hover, .cat-btn.active { border-color:var(--accent); color:var(--accent-cyan); background:var(--accent-dim); }
+.featured-post { display:grid; grid-template-columns:1.2fr 1fr; gap:3rem; align-items:center; background:var(--bg-card); border:1px solid var(--border); border-radius:var(--r-xl); padding:2.5rem; margin-bottom:3rem; }
+.featured-thumb { height:260px; border-radius:var(--r-lg); background:linear-gradient(135deg,rgba(0,170,255,0.15),rgba(109,40,217,0.15)); display:flex; align-items:center; justify-content:center; font-size:5rem; border:1px solid var(--border); }
+.featured-label { font-size:.72rem; font-weight:700; color:#f59e0b; text-transform:uppercase; letter-spacing:1px; margin-bottom:.8rem; }
+.featured-post h2 { font-size:1.6rem; font-weight:800; margin-bottom:1rem; line-height:1.3; }
+.featured-post p { color:var(--text-secondary); font-size:.92rem; line-height:1.7; margin-bottom:1.5rem; }
+.newsletter-box { background:var(--bg-card); border:1px solid var(--border-hover); border-radius:var(--r-xl); padding:3rem; text-align:center; margin-top:4rem; }
+.newsletter-box h3 { font-size:1.5rem; font-weight:800; margin-bottom:.7rem; }
+.newsletter-box p { color:var(--text-secondary); margin-bottom:1.8rem; }
+.newsletter-form { display:flex; gap:.8rem; max-width:480px; margin:0 auto; }
+.newsletter-form input { flex:1; padding:.8rem 1.1rem; background:var(--bg-secondary); border:1.5px solid var(--border); border-radius:var(--r-xl); color:var(--text-primary); font-family:inherit; font-size:.9rem; outline:none; transition:border-color .2s; }
+.newsletter-form input:focus { border-color:var(--accent); }
+@media(max-width:900px){ .blog-grid{grid-template-columns:1fr 1fr;} .featured-post{grid-template-columns:1fr;} .featured-thumb{height:180px;} }
+@media(max-width:600px){ .blog-grid{grid-template-columns:1fr;} .newsletter-form{flex-direction:column;} }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">TRIGDA</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="ai-agent.html">AI Agent</a>
+    <a href="lead-generation.html">Lead Generation</a>
+    <a href="ai-automation.html">AI Automation</a>
+    <a href="web-development.html">Web Development</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-cta"><a href="free-demo.html" class="btn-primary btn-sm">Book Appointment</a></div>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="ai-agent.html">AI Agent</a>
+  <a href="lead-generation.html">Lead Generation</a><a href="ai-automation.html">AI Automation</a>
+  <a href="web-development.html">Web Development</a><a href="contact.html">Contact</a>
+  <a href="free-demo.html" class="btn-primary" style="text-align:center;margin-top:.5rem;">Book Appointment</a>
+</div>
+
+<section class="page-hero">
+  <div class="glow-orb glow-blue" style="width:400px;height:400px;top:-100px;left:50%;transform:translateX(-50%);opacity:.12;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="fade-up">
+      <div class="section-tag" style="margin:0 auto 1.2rem;">📝 Blog</div>
+      <h1 class="section-title" style="font-size:clamp(2rem,5vw,3rem);">AI Growth <span class="highlight">Insights</span></h1>
+      <p class="section-sub">Strategies, case studies, and expert guides on AI automation, lead generation, and scaling your business.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:40px;">
+  <div class="container">
+    <!-- Categories -->
+    <div class="categories fade-up">
+      <button class="cat-btn active">All Posts</button>
+      <button class="cat-btn">AI Automation</button>
+      <button class="cat-btn">Lead Generation</button>
+      <button class="cat-btn">AI Chatbots</button>
+      <button class="cat-btn">Case Studies</button>
+      <button class="cat-btn">Tutorials</button>
+      <button class="cat-btn">Industry News</button>
+    </div>
+
+    <!-- Featured Post -->
+    <div class="featured-post fade-up">
+      <div class="featured-thumb">🚀</div>
+      <div>
+        <div class="featured-label">⭐ Featured Article</div>
+        <h2>How AI Automation Helped 500 Businesses 10x Their Lead Generation in 2025</h2>
+        <p>A deep dive into how modern businesses are leveraging TRIGDA to fully automate their sales pipeline — from first touch to closed deal — without adding a single headcount.</p>
+        <div class="blog-meta" style="margin-bottom:1.5rem;"><span>👤 Talha Malik</span><span>📅 May 20, 2025</span><span>⏱ 8 min read</span></div>
+        <a href="#" class="btn-primary btn-sm">Read Full Article →</a>
+      </div>
+    </div>
+
+    <!-- Blog Grid -->
+    <div class="blog-grid">
+      <a href="#" class="card blog-card fade-up">
+        <div class="blog-thumb">🤖</div>
+        <div class="blog-tag">AI Chatbots</div>
+        <h3>The Complete Guide to AI Chatbots for Sales in 2025</h3>
+        <p>Learn how to deploy an AI chatbot that qualifies leads, books meetings, and closes deals — 24 hours a day, 7 days a week.</p>
+        <div class="blog-meta"><span>📅 May 15, 2025</span><span>⏱ 6 min</span></div>
+      </a>
+      <a href="#" class="card blog-card fade-up">
+        <div class="blog-thumb">🎯</div>
+        <div class="blog-tag">Lead Generation</div>
+        <h3>7 Lead Generation Strategies That Actually Work in 2025</h3>
+        <p>Stop wasting budget on tactics that don't convert. Here are the 7 AI-powered lead generation strategies delivering real ROI right now.</p>
+        <div class="blog-meta"><span>📅 May 10, 2025</span><span>⏱ 5 min</span></div>
+      </a>
+      <a href="#" class="card blog-card fade-up">
+        <div class="blog-thumb">⚡</div>
+        <div class="blog-tag">Automation</div>
+        <h3>How to Automate Your Entire Sales Follow-Up Process</h3>
+        <p>A step-by-step playbook for setting up automated follow-up sequences that convert cold leads into warm prospects on autopilot.</p>
+        <div class="blog-meta"><span>📅 May 5, 2025</span><span>⏱ 7 min</span></div>
+      </a>
+      <a href="#" class="card blog-card fade-up">
+        <div class="blog-thumb">📊</div>
+        <div class="blog-tag">Case Study</div>
+        <h3>Case Study: Real Estate Agency 3x Revenue With TRIGDA</h3>
+        <p>How a mid-sized real estate agency in Islamabad used AI lead qualification to triple their monthly revenue in just 90 days.</p>
+        <div class="blog-meta"><span>📅 Apr 28, 2025</span><span>⏱ 4 min</span></div>
+      </a>
+      <a href="#" class="card blog-card fade-up">
+        <div class="blog-thumb">📧</div>
+        <div class="blog-tag">Tutorial</div>
+        <h3>Email Automation 101: Build Your First Drip Campaign</h3>
+        <p>A beginner-friendly guide to creating email sequences that nurture leads and drive conversions — no coding required.</p>
+        <div class="blog-meta"><span>📅 Apr 20, 2025</span><span>⏱ 9 min</span></div>
+      </a>
+      <a href="#" class="card blog-card fade-up">
+        <div class="blog-thumb">💰</div>
+        <div class="blog-tag">Industry News</div>
+        <h3>AI Sales Tools in 2025: What's Working and What's Not</h3>
+        <p>An honest breakdown of the AI sales tools market — which tools are delivering real ROI and which are just hype.</p>
+        <div class="blog-meta"><span>📅 Apr 15, 2025</span><span>⏱ 6 min</span></div>
+      </a>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="newsletter-box fade-up">
+      <div class="section-tag" style="margin:0 auto 1rem;">📬 Newsletter</div>
+      <h3>Get AI Growth Tips Every Week</h3>
+      <p>Join 12,000+ business owners getting actionable AI automation strategies every Tuesday.</p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="your@email.com">
+        <button class="btn-primary">Subscribe Free</button>
+      </div>
+      <p style="font-size:.72rem;color:var(--text-muted);margin-top:.8rem;">No spam. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">TRIGDA</div><p class="footer-desc">The AI-powered growth platform that puts your business on autopilot.</p></div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="ai-agent.html">AI Agent</a></li><li><a href="lead-generation.html">Lead Generation</a></li><li><a href="ai-automation.html">AI Automation</a></li><li><a href="web-development.html">Web Development</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="blog.html">Blog</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li><li><a href="services-overview.html">All Services</a></li></ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-service.html">Terms of Service</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 TRIGDA. All rights reserved.</p></div>
+  </div>
+</footer>
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('navbar').style.background=window.scrollY>50?'rgba(6,6,14,0.98)':'rgba(6,6,14,0.85)';});
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+document.querySelectorAll('.cat-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');});});
+const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+<!-- Floating AI Chat Widget -->
+<button class="chat-widget-launcher" id="chatWidgetLauncher" aria-label="Open TRIGDA AI Assistant" aria-expanded="false">💬</button>
+<div class="chat-widget-panel" id="chatWidgetPanel">
+  <div class="chat-widget-header">
+    <div>
+      <div class="chat-widget-header-title">TRIGDA AI Assistant</div>
+      <div class="chat-widget-header-sub"><span style="width:6px;height:6px;background:#00c864;border-radius:50%;display:inline-block;box-shadow:0 0 6px #00c864;"></span> Online — powered by Gemini</div>
+    </div>
+    <button class="chat-widget-close" id="chatWidgetClose" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-widget-body">
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg">
+        <div class="chat-avatar ai">AI</div>
+        <div class="chat-bubble ai-bubble">Hey! 👋 I'm TRIGDA's intelligent assistant. Ask me anything about our services, process, or booking an appointment!</div>
+      </div>
+    </div>
+    <div class="chat-msg typing-indicator" id="typingIndicator">
+      <div class="chat-avatar ai">AI</div>
+      <div class="chat-bubble ai-bubble"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="chat-widget-footer">
+    <div class="chat-msg-counter">Messages used: <span id="msgCount">0</span>/10</div>
+    <div class="chat-bar">
+      <input class="chat-input-field" id="chatInput" placeholder="Ask about services, process..." onkeydown="if(event.key==='Enter')sendMessage()">
+      <button class="btn-primary btn-sm" onclick="sendMessage()" id="sendBtn">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHAT LIMIT POPUP -->
+<div class="chat-limit-overlay" id="chatLimitOverlay">
+  <div class="chat-limit-box">
+    <span class="limit-icon">🚀</span>
+    <h3>Free Message Limit Reached!</h3>
+    <p>You've used your 10 free messages. Your limit will reset in <strong id="timeLeftDisplay" style="color:var(--accent-cyan);">12h 0m</strong>. Or book a free appointment to get personalized answers from our team!</p>
+    <a href="free-demo.html" class="btn-primary btn-lg" style="display:block;width:100%;text-align:center;margin-bottom:.8rem;">
+      📅 Book Appointment
+    </a>
+    <button onclick="document.getElementById('chatLimitOverlay').classList.remove('show')"
+      style="background:none;border:none;color:var(--text-muted);font-size:.82rem;cursor:pointer;font-family:inherit;">
+      Maybe later
+    </button>
+  </div>
+</div>
+<script src="chatbot-widget.js"></script>
+
+</body>
+</html>

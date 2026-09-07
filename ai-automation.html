@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Automation — TRIGDA | Automate Your Business Workflows</title>
+<meta name="description" content="Connect your existing tools and automate repetitive follow-ups, reminders, and reporting with TRIGDA's AI automation service.">
+<meta name="keywords" content="AI automation Pakistan, workflow automation, business process automation, CRM automation">
+<link rel="canonical" href="https://trigda.online/ai-automation.html">
+<meta property="og:title" content="AI Automation — TRIGDA | Automate Your Business Workflows">
+<meta property="og:description" content="Connect your existing tools and automate repetitive follow-ups, reminders, and reporting with TRIGDA's AI automation service.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<style>
+.workflow-visual {
+  background:var(--bg-card); border:1px solid var(--border);
+  border-radius:var(--r-lg); padding:2rem; position:relative; overflow:hidden;
+}
+.workflow-nodes { display:flex; flex-direction:column; gap:.8rem; }
+.wf-node {
+  display:flex; align-items:center; gap:1rem;
+  padding:.9rem 1.2rem; border-radius:var(--r-md);
+  background:var(--bg-secondary); border:1px solid var(--border);
+  position:relative; transition:.3s;
+}
+.wf-node:hover { border-color:var(--border-hover); }
+.wf-node-icon { width:38px; height:38px; border-radius:var(--r-sm); display:flex; align-items:center; justify-content:center; font-size:1rem; flex-shrink:0; }
+.wf-node-icon.trigger { background:rgba(0,200,100,0.15); border:1px solid rgba(0,200,100,0.3); }
+.wf-node-icon.action { background:var(--accent-dim); border:1px solid var(--border-hover); }
+.wf-node-icon.condition { background:rgba(245,158,11,0.12); border:1px solid rgba(245,158,11,0.25); }
+.wf-node-label { font-size:.88rem; font-weight:600; }
+.wf-node-sub { font-size:.75rem; color:var(--text-muted); }
+.wf-arrow { display:flex; justify-content:center; align-items:center; color:var(--accent); font-size:.8rem; opacity:.5; }
+.wf-badge { margin-left:auto; font-size:.7rem; font-weight:700; padding:.25rem .6rem; border-radius:var(--r-xl); }
+.wf-badge.live { background:rgba(0,200,100,0.12); color:#00c864; border:1px solid rgba(0,200,100,0.2); }
+.wf-badge.ai { background:var(--accent-dim); color:var(--accent-cyan); border:1px solid var(--border); }
+
+.integrations-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:1rem; }
+.integration-pill {
+  display:flex; flex-direction:column; align-items:center; gap:.5rem;
+  padding:1.2rem .8rem; background:var(--bg-card); border:1px solid var(--border);
+  border-radius:var(--r-md); transition:.25s; cursor:default; text-align:center;
+}
+.integration-pill:hover { border-color:var(--border-hover); transform:translateY(-3px); }
+.integration-pill span { font-size:.75rem; color:var(--text-secondary); font-weight:500; }
+.int-icon { font-size:1.6rem; }
+
+.automation-types { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; }
+
+@media(max-width:900px){ .integrations-grid{grid-template-columns:repeat(3,1fr);} .automation-types{grid-template-columns:1fr 1fr;} }
+@media(max-width:900px){
+  .workflow-section-grid { grid-template-columns:1fr !important; }
+  .responsive-grid { grid-template-columns:1fr !important; }
+}
+@media(max-width:768px){
+  .workflow-nodes { gap:.6rem; }
+  .wf-node { padding:.7rem .9rem; flex-wrap:wrap; gap:.6rem; }
+  .wf-node-label { font-size:.82rem; }
+  .wf-node-sub { font-size:.7rem; }
+  .workflow-visual { padding:1.2rem; }
+  .wf-badge { font-size:.65rem; padding:.2rem .5rem; }
+  section > div > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:1fr !important; }
+}
+@media(max-width:600px){ .integrations-grid{grid-template-columns:repeat(2,1fr);} .automation-types{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <a href="index.html" class="nav-logo">TRIGDA</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="ai-agent.html">AI Agent</a>
+    <a href="lead-generation.html">Lead Generation</a>
+    <a href="ai-automation.html" class="active">AI Automation</a>
+    <a href="web-development.html">Web Development</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <div class="nav-cta"><a href="free-demo.html" class="btn-primary btn-sm">Book Appointment</a></div>
+  <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a><a href="ai-agent.html">AI Agent</a>
+  <a href="lead-generation.html">Lead Generation</a><a href="ai-automation.html">AI Automation</a>
+  <a href="web-development.html">Web Development</a><a href="contact.html">Contact</a>
+  <a href="free-demo.html" class="btn-primary" style="text-align:center;margin-top:.5rem;">Book Appointment</a>
+</div>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="glow-orb glow-purple" style="width:500px;height:500px;top:-150px;left:50%;transform:translateX(-50%);opacity:.14;"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="fade-up">
+      <div class="section-tag">⚡ AI Automation</div>
+      <h1 class="section-title" style="font-size:clamp(2rem,5vw,3.4rem);">Automate Everything.<br><span class="highlight">Grow Faster.</span></h1>
+      <p class="section-sub">Connect your entire tech stack and let AI handle the repetitive work — from lead follow-up to onboarding, invoicing, and beyond. Zero code required.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin-top:2rem;">
+        <a href="free-demo.html" class="btn-primary btn-lg">Start Automating Free</a>
+        <a href="#workflows" class="btn-outline btn-lg">See Workflows</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE DEMO BUILDER -->
+<section id="live-demo" class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:2rem;">
+      <div class="section-tag">🧪 Try It Live</div>
+      <h2 class="section-title">Build A <span class="highlight">Demo Agent</span> For Your Business</h2>
+      <p class="section-sub" style="margin:0 auto;">Tell us what your business does, answer a couple of quick questions, and chat with a live AI agent built around it — right here, in seconds.</p>
+    </div>
+
+    <div class="card fade-up" style="max-width:640px;margin:0 auto;padding:2rem;">
+      <div id="demoBuilderStep1">
+        <label class="form-label">What's your business?</label>
+        <input type="text" id="demoBizType" class="form-input" placeholder="e.g. Italian restaurant, hair salon, real estate agency" style="margin-top:.5rem;">
+        <button class="btn-primary" style="width:100%;margin-top:1rem;" onclick="startDemoBuilder()" id="demoStep1Btn">Generate My Demo →</button>
+        <div id="demoBuilderError" class="form-status error" style="display:none;"></div>
+      </div>
+
+      <div id="demoBuilderStep2" style="display:none;">
+        <p style="font-size:.88rem;color:var(--text-secondary);margin-bottom:1rem;">Just a couple quick details so your demo agent knows what to say:</p>
+        <div id="demoQuestionsContainer"></div>
+        <button class="btn-primary" style="width:100%;margin-top:1rem;" onclick="buildDemoAgent()" id="demoStep2Btn">Build My Chatbot →</button>
+      </div>
+
+      <div id="demoBuilderStep3" style="display:none;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+          <div style="font-weight:700;font-size:.9rem;">🤖 Your Live Demo Agent</div>
+          <button onclick="resetDemoBuilder()" style="background:none;border:none;color:var(--text-muted);font-size:.8rem;cursor:pointer;">↺ Start Over</button>
+        </div>
+        <div id="demoChatMessages" style="max-height:320px;overflow-y:auto;border:1px solid var(--border);border-radius:var(--r-md);padding:1rem;background:var(--bg-primary);display:flex;flex-direction:column;gap:.8rem;"></div>
+        <div class="chat-msg typing-indicator" id="demoTypingIndicator" style="padding:.5rem 0 0;">
+          <div class="chat-avatar ai">AI</div><div class="chat-bubble ai-bubble"><span></span><span></span><span></span></div>
+        </div>
+        <div class="chat-bar">
+          <input class="chat-input-field" id="demoChatInput" placeholder="Ask your demo agent a question..." onkeydown="if(event.key==='Enter')sendDemoMessage()">
+          <button class="btn-primary btn-sm" onclick="sendDemoMessage()" id="demoSendBtn">Send</button>
+        </div>
+        <p style="font-size:.72rem;color:var(--text-muted);margin-top:.8rem;text-align:center;">This is a quick live preview — your real deployed automation would be fully configured, tested, and connected to your tools.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKFLOW BUILDER -->
+<section id="workflows" class="section">
+  <div class="container">
+    <div class="workflow-section-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;">
+      <div class="fade-up">
+        <div class="section-tag">🔧 Workflow Builder</div>
+        <h2 class="section-title">Build Powerful <span class="highlight">Workflows</span> in Minutes</h2>
+        <p class="section-sub" style="margin-bottom:2rem;">Our visual workflow builder lets you automate any business process with point-and-click simplicity. No code, no developers, no waiting.</p>
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div style="display:flex;align-items:center;gap:.9rem;">
+            <div style="width:20px;height:20px;border-radius:50%;background:var(--btn-grad);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;">✓</div>
+            <span style="font-size:.9rem;color:var(--text-secondary);">200+ pre-built workflow templates</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.9rem;">
+            <div style="width:20px;height:20px;border-radius:50%;background:var(--btn-grad);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;">✓</div>
+            <span style="font-size:.9rem;color:var(--text-secondary);">Drag-and-drop visual editor</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.9rem;">
+            <div style="width:20px;height:20px;border-radius:50%;background:var(--btn-grad);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;">✓</div>
+            <span style="font-size:.9rem;color:var(--text-secondary);">AI suggests optimizations automatically</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.9rem;">
+            <div style="width:20px;height:20px;border-radius:50%;background:var(--btn-grad);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;">✓</div>
+            <span style="font-size:.9rem;color:var(--text-secondary);">Real-time execution logs & debugging</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:.9rem;">
+            <div style="width:20px;height:20px;border-radius:50%;background:var(--btn-grad);display:flex;align-items:center;justify-content:center;font-size:.65rem;flex-shrink:0;">✓</div>
+            <span style="font-size:.9rem;color:var(--text-secondary);">Deploy in one click — goes live instantly</span>
+          </div>
+        </div>
+      </div>
+      <div class="workflow-visual fade-up">
+        <p style="font-size:.72rem;color:var(--text-muted);letter-spacing:.8px;text-transform:uppercase;margin-bottom:1.2rem;">📋 New Lead Follow-Up Workflow</p>
+        <div class="workflow-nodes">
+          <div class="wf-node">
+            <div class="wf-node-icon trigger">🎯</div>
+            <div><div class="wf-node-label">Trigger: New Lead Captured</div><div class="wf-node-sub">From website chatbot or form</div></div>
+            <span class="wf-badge live">LIVE</span>
+          </div>
+          <div class="wf-arrow">↓</div>
+          <div class="wf-node">
+            <div class="wf-node-icon ai">🤖</div>
+            <div><div class="wf-node-label">AI: Qualify & Score Lead</div><div class="wf-node-sub">Budget · Intent · Timeline</div></div>
+            <span class="wf-badge ai">AI</span>
+          </div>
+          <div class="wf-arrow">↓</div>
+          <div class="wf-node">
+            <div class="wf-node-icon condition">⚡</div>
+            <div><div class="wf-node-label">Condition: Score ≥ 70?</div><div class="wf-node-sub">Route to hot or cold sequence</div></div>
+          </div>
+          <div class="wf-arrow">↓</div>
+          <div class="wf-node">
+            <div class="wf-node-icon action">📧</div>
+            <div><div class="wf-node-label">Send: Personalized Email</div><div class="wf-node-sub">AI-written, brand-matched copy</div></div>
+            <span class="wf-badge ai">AI</span>
+          </div>
+          <div class="wf-arrow">↓</div>
+          <div class="wf-node">
+            <div class="wf-node-icon action">📅</div>
+            <div><div class="wf-node-label">Action: Book Demo Meeting</div><div class="wf-node-sub">Auto-schedule in Calendly / Cal.com</div></div>
+            <span class="wf-badge live">AUTO</span>
+          </div>
+          <div class="wf-arrow">↓</div>
+          <div class="wf-node">
+            <div class="wf-node-icon action">💬</div>
+            <div><div class="wf-node-label">Notify: Sales Rep via Slack</div><div class="wf-node-sub">Lead summary + context attached</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTOMATION TYPES -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="section-tag">🗂️ Automation Types</div>
+      <h2 class="section-title">Automate Any <span class="highlight">Business Process</span></h2>
+    </div>
+    <div class="automation-types">
+      <div class="card fade-up">
+        <div class="icon-badge">📧</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">Email Sequences</h3>
+        <p style="color:var(--text-secondary);font-size:.85rem;line-height:1.65;">Multi-step email campaigns triggered by behavior — opens, clicks, website visits, and more. AI writes and optimizes every message.</p>
+      </div>
+      <div class="card fade-up">
+        <div class="icon-badge">🔔</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">Follow-Up Reminders</h3>
+        <p style="color:var(--text-secondary);font-size:.85rem;line-height:1.65;">Never let a lead go cold. AI schedules and sends personalized follow-ups at the perfect time based on engagement signals.</p>
+      </div>
+      <div class="card fade-up">
+        <div class="icon-badge">📊</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">CRM Data Entry</h3>
+        <p style="color:var(--text-secondary);font-size:.85rem;line-height:1.65;">Automatically log calls, emails, and meetings to your CRM. AI enriches contact data with social profiles and company info.</p>
+      </div>
+      <div class="card fade-up">
+        <div class="icon-badge">🤝</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">Onboarding Flows</h3>
+        <p style="color:var(--text-secondary);font-size:.85rem;line-height:1.65;">Deliver a world-class onboarding experience with automated welcome sequences, tutorials, and check-in calls.</p>
+      </div>
+      <div class="card fade-up">
+        <div class="icon-badge">💳</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">Invoice & Payments</h3>
+        <p style="color:var(--text-secondary);font-size:.85rem;line-height:1.65;">Auto-generate invoices, send payment reminders, and reconcile payments — integrated with Stripe, QuickBooks, and more.</p>
+      </div>
+      <div class="card fade-up">
+        <div class="icon-badge">📋</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:.5rem;">Reporting & Alerts</h3>
+        <p style="color:var(--text-secondary);font-size:.85rem;line-height:1.65;">Automated weekly reports delivered to your inbox or Slack. Get instant alerts when key metrics cross thresholds.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTEGRATIONS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <div class="section-tag">🔗 Integrations</div>
+      <h2 class="section-title">Connects With <span class="highlight">200+ Tools</span></h2>
+      <p class="section-sub">Plug TRIGDA into your existing stack in minutes with native integrations.</p>
+    </div>
+    <div class="integrations-grid fade-up">
+      <div class="integration-pill"><div class="int-icon">📧</div><span>Gmail</span></div>
+      <div class="integration-pill"><div class="int-icon">💼</div><span>HubSpot</span></div>
+      <div class="integration-pill"><div class="int-icon">☁️</div><span>Salesforce</span></div>
+      <div class="integration-pill"><div class="int-icon">💬</div><span>Slack</span></div>
+      <div class="integration-pill"><div class="int-icon">📅</div><span>Calendly</span></div>
+      <div class="integration-pill"><div class="int-icon">💳</div><span>Stripe</span></div>
+      <div class="integration-pill"><div class="int-icon">📱</div><span>WhatsApp</span></div>
+      <div class="integration-pill"><div class="int-icon">🔵</div><span>LinkedIn</span></div>
+      <div class="integration-pill"><div class="int-icon">📊</div><span>Sheets</span></div>
+      <div class="integration-pill"><div class="int-icon">🔶</div><span>Zapier</span></div>
+      <div class="integration-pill"><div class="int-icon">🟣</div><span>Pipedrive</span></div>
+      <div class="integration-pill"><div class="int-icon">🏢</div><span>GoHighLevel</span></div>
+      <div class="integration-pill"><div class="int-icon">📣</div><span>Mailchimp</span></div>
+      <div class="integration-pill"><div class="int-icon">🟠</div><span>ActiveCampaign</span></div>
+      <div class="integration-pill"><div class="int-icon">➕</div><span>200+ More</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section" style="background:var(--bg-secondary);">
+  <div class="container">
+    <div class="text-center fade-up" style="margin-bottom:3rem;">
+      <h2 class="section-title">Automation <span class="highlight">Impact</span></h2>
+    </div>
+    <div class="grid-3 fade-up" style="max-width:900px;margin:0 auto;">
+      <div class="card" style="text-align:center;padding:2.5rem;">
+        <div class="stat-value">18hr</div>
+        <div class="stat-label">Saved per employee per week</div>
+      </div>
+      <div class="card" style="text-align:center;padding:2.5rem;">
+        <div class="stat-value">340%</div>
+        <div class="stat-label">Average productivity increase</div>
+      </div>
+      <div class="card" style="text-align:center;padding:2.5rem;">
+        <div class="stat-value">48hr</div>
+        <div class="stat-label">Time to go live</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="cta-box fade-up">
+      <h2 class="section-title">Start Automating Your <span class="highlight">Business Today</span></h2>
+      <p style="color:var(--text-secondary);max-width:500px;margin:1rem auto;">Set up your first automation in under 10 minutes. No technical skills required.</p>
+      <div class="cta-btns">
+        <a href="free-demo.html" class="btn-primary btn-lg">Book Appointment</a>
+        <a href="services-overview.html" class="btn-outline btn-lg">See All Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">TRIGDA</div><p class="footer-desc">AI-powered business automation platform.</p></div>
+      <div class="footer-col"><h4>Product</h4><ul><li><a href="ai-agent.html">AI Agent</a></li><li><a href="lead-generation.html">Lead Generation</a></li><li><a href="ai-automation.html">AI Automation</a></li><li><a href="web-development.html">Web Development</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h4>Legal</h4><ul>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms-of-service.html">Terms of Service</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 TRIGDA. All rights reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{document.getElementById('navbar').style.background=window.scrollY>50?'rgba(6,6,14,0.98)':'rgba(6,6,14,0.85)';});
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+const observer=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});},{threshold:0.1});
+document.querySelectorAll('.fade-up').forEach(el=>observer.observe(el));
+</script>
+<!-- Floating AI Chat Widget -->
+<button class="chat-widget-launcher" id="chatWidgetLauncher" aria-label="Open TRIGDA AI Assistant" aria-expanded="false">💬</button>
+<div class="chat-widget-panel" id="chatWidgetPanel">
+  <div class="chat-widget-header">
+    <div>
+      <div class="chat-widget-header-title">TRIGDA AI Assistant</div>
+      <div class="chat-widget-header-sub"><span style="width:6px;height:6px;background:#00c864;border-radius:50%;display:inline-block;box-shadow:0 0 6px #00c864;"></span> Online — powered by Gemini</div>
+    </div>
+    <button class="chat-widget-close" id="chatWidgetClose" aria-label="Close chat">✕</button>
+  </div>
+  <div class="chat-widget-body">
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg">
+        <div class="chat-avatar ai">AI</div>
+        <div class="chat-bubble ai-bubble">Hey! 👋 I'm TRIGDA's intelligent assistant. Ask me anything about our services, process, or booking an appointment!</div>
+      </div>
+    </div>
+    <div class="chat-msg typing-indicator" id="typingIndicator">
+      <div class="chat-avatar ai">AI</div>
+      <div class="chat-bubble ai-bubble"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="chat-widget-footer">
+    <div class="chat-msg-counter">Messages used: <span id="msgCount">0</span>/10</div>
+    <div class="chat-bar">
+      <input class="chat-input-field" id="chatInput" placeholder="Ask about services, process..." onkeydown="if(event.key==='Enter')sendMessage()">
+      <button class="btn-primary btn-sm" onclick="sendMessage()" id="sendBtn">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- CHAT LIMIT POPUP -->
+<div class="chat-limit-overlay" id="chatLimitOverlay">
+  <div class="chat-limit-box">
+    <span class="limit-icon">🚀</span>
+    <h3>Free Message Limit Reached!</h3>
+    <p>You've used your 10 free messages. Your limit will reset in <strong id="timeLeftDisplay" style="color:var(--accent-cyan);">12h 0m</strong>. Or book a free appointment to get personalized answers from our team!</p>
+    <a href="free-demo.html" class="btn-primary btn-lg" style="display:block;width:100%;text-align:center;margin-bottom:.8rem;">
+      📅 Book Appointment
+    </a>
+    <button onclick="document.getElementById('chatLimitOverlay').classList.remove('show')"
+      style="background:none;border:none;color:var(--text-muted);font-size:.82rem;cursor:pointer;font-family:inherit;">
+      Maybe later
+    </button>
+  </div>
+</div>
+<script src="chatbot-widget.js"></script>
+<script src="demo-builder.js"></script>
+
+</body>
+</html>
